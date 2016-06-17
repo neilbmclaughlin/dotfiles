@@ -24,3 +24,5 @@ brew cask install sublime-text
 brew cask install slack
 brew cask install skype
 
+# Misc
+brew cask install spotify
