@@ -11,10 +11,10 @@ brew cask install firefox
 brew cask install spectacle
 brew cask install iterm2
 brew cask install google-drive
-brew cask install dropbox
 brew cask install evernote
 brew cask install caffeine
 brew cask install vmware-horizon-client
+brew cask install screenhero
 
 # Editors
 brew cask install atom
@@ -24,6 +24,3 @@ brew cask install sublime-text
 brew cask install slack
 brew cask install skype
 
-# Miss
-brew cask install sonos
-brew cask install garmin-express
