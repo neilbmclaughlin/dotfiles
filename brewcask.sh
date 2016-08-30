@@ -15,6 +15,7 @@ brew cask install evernote
 brew cask install caffeine
 brew cask install vmware-horizon-client
 brew cask install screenhero
+brew cask install rdesktop
 
 # Editors
 brew cask install atom

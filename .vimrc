@@ -9,6 +9,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'pangloss/vim-javascript'
 Plugin 'christoomey/vim-titlecase'
 Plugin 'christoomey/vim-sort-motion'
@@ -21,7 +24,7 @@ Plugin 'kana/vim-textobj-line'
 Plugin 'moll/vim-node'
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'ternjs/tern_for_vim'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 
 " Keep Plugin commands between vundle#begin/end.
@@ -40,6 +43,7 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "
+set autoread
 set expandtab
 set shiftwidth=2
 set softtabstop=2
@@ -49,3 +53,19 @@ set background=dark
 colorscheme distinguished
 set relativenumber
 set number
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+set statusline==========\>\ %f\ \<============
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Use global, static locations for back,swap and undo
+set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap//
+set undodir=~/.vim/tmp/undo//
