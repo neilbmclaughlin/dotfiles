@@ -17,3 +17,5 @@
 	default = upstream
 [core]
 	editor = /usr/local/bin/vim
+[credential]
+	helper = osxkeychain

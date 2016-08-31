@@ -1,7 +1,6 @@
 alias sbp='. ~/.bashrc'
 alias ls='ls -aFhlG'
-alias vim=/usr/local/Cellar/vim/7.4.1910/bin/vim
-alias vi=/usr/local/Cellar/vim/7.4.1910/bin/vim
 alias chrome='open /Applications/Google\ Chrome.app'
 alias atom='open /Applications/Atom.app'
 alias git=hub
+alias vi=vim

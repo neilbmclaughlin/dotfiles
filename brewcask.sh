@@ -15,11 +15,7 @@ brew cask install evernote
 brew cask install caffeine
 brew cask install vmware-horizon-client
 brew cask install screenhero
-brew cask install rdesktop
-
-# Editors
-brew cask install atom
-brew cask install sublime-text
+brew cask install disablemonitor
 
 # IM
 brew cask install slack

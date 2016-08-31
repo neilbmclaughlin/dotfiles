@@ -10,8 +10,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'ternjs/tern_for_vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'pangloss/vim-javascript'
 Plugin 'christoomey/vim-titlecase'
 Plugin 'christoomey/vim-sort-motion'
@@ -25,6 +23,8 @@ Plugin 'moll/vim-node'
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'Valloric/YouCompleteMe'
 
 
 " Keep Plugin commands between vundle#begin/end.
@@ -65,7 +65,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
 " Use global, static locations for back,swap and undo
+silent execute '!mkdir -p ~/.vim/tmp/backup'
 set backupdir=~/.vim/tmp/backup//
+silent execute '!mkdir -p ~/.vim/tmp/swap'
 set directory=~/.vim/tmp/swap//
+silent execute '!mkdir -p ~/.vim/tmp/undo'
 set undodir=~/.vim/tmp/undo//
