@@ -35,3 +35,4 @@ Other stuff to do
 * Install Remote Desktop Connection (https://itunes.apple.com/gb/app/microsoft-remote-desktop/id715768417?mt=12) as it doesn't seem to be available from brew cask
 * Configure Mail for the nhs.net exchange server
 * Configure Slack for nhsuk, nhschoices and mittenview (my private Slack domain used for github notifications)
+* Configure Choices VPN
