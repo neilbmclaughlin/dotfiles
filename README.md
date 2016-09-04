@@ -25,7 +25,14 @@ PluginInstall will install all plugins but you will need to complete the followi
 Git specifics
 =============
 
-As 2 factor auth is enabled you will need to create a git personal access token and use thatinstead of the password. After first use it will be stored in OS X Keychain.
+As 2 factor auth is enabled you will need to create a git personal access token and use that when prompted for the password. After first use it will be stored in OS X Keychain so will no longer prompt.
 
-Note: the github command line integrations seem to be different. E.g. for `git issue` use normal
-username and password which will then prompt for the 2 factor code.
+Note: the github command line integrations seem to be different. E.g. for `git issue` use normal username and password which will then trigger a 2 factor code message.
+
+Other stuff to do
+=================
+
+* Install Remote Desktop Connection (https://itunes.apple.com/gb/app/microsoft-remote-desktop/id715768417?mt=12) as it doesn't seem to be available from brew cask
+* Configure Mail for the nhs.net exchange server
+* Configure Slack for nhsuk, nhschoices and mittenview (my private Slack domain used for github notifications)
+* Configure VPN (http://anders.com/guides/native-cisco-vpn-on-mac-os-x/)
