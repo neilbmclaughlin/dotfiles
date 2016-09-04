@@ -19,3 +19,5 @@ brew install heroku
 brew install ruby
 brew install vim
 brew install CMake
+brew install pass
+brew install gnupg

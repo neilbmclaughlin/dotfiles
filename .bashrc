@@ -9,3 +9,4 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 export PATH=$PATH:$(npm -g bin)
+source /usr/local/etc/bash_completion.d/password-store
