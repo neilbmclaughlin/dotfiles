@@ -1,0 +1,91 @@
+*myhelp.txt*  For Vim version 7.4  Last change: 2014 October 8
+*myhelp*
+
+Neil's cheat sheet of Vim stuff he always forgets.
+
+===============================================================================
+CONTENTS (CTRL-T: jump to subject)
+
+  1. Examples .........................................|myhelp-examples|
+  1. Movement .........................................|myhelp-movement|
+  2. Notes.............................................|myhelp-notes|
+  3. Rebuilding this file
+  4. Further Reading
+
+===============================================================================
+Examples                                               *myhelp-examples*
+
+:vsp <filename> (:h split)
+verb(i|[0-9]*)noun
+d2w - delete 2 words
+ds' - delete surrounding quotes 'test'
+cs'" - change ' for "  'test'
+ysiw" - surround with "  
+gcl - comment line
+gcj5 - comment next 5 lines
+griw - replace inner word with contents of clipboard (aka register)
+gsip - sort paragraph 
+gcii - comment all lines in an indent
+gf - open the file under the cursor
+viwp - replace the word with yanked text
+=i{ formats the code block.
+=2i{ formats the current block and the block around it.
+zfi{ - fold lines between braces (zd to undo)
+:bufdo e! - reload all buffers
+$V%y - yank entire function 
+:set paste/nopaste when cutting and pasting
+:SyntasticToggleMode to get rid of errors when editing nunjucks files (:help syntastic-commands)
+
+
+Verbs c d > y v A i motion w (n)j 
+
+noun(text object) iw i' i" i] i) is ip it
+
+:reg : list registers (and show what’s in them)
+
+[f|t][char] find (include|exclude char)
+/ search
+. repeat
+
+Lexplore: https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.nqo6ojss3
+  d creates new directory
+  % creates/opens a new file
+  D deletes a directory/file
+  R renames a file
+  o opens the file in a horizontal split
+  v opens the file in a vertical split
+
+===============================================================================
+Movement                                                 *myhelp-movement*
+
+   - gg : got to top
+   - ]] : next section
+   - ]m : next method
+   - [m : back to the start of the method
+   - ) : Next sentence
+   - CTRL-D : Down half a page
+   - CTRL-U : Up half a page
+   - CTRL-]: jump to subject
+   - CTRL-T/O: jump back (f0rther)
+   - z commands:
+      - z : Current line at the top
+      - z. : current line at the center
+      - z- : current line at the bottom
+
+===============================================================================
+Notes                                               *myhelp-notes*
+
+===============================================================================
+Rebuilding this file.
+
+This file is loaded as a plugin. If you ever need to rebuild the tags file, run
+this command: >
+   :helpt /path/to/this/directory
+You may need to restart VIM to see the updated version.
+===============================================================================
+Further Reading.(gx to navigate to links)
+
+vim help http://vimdoc.sourceforge.net/htmldoc/help.html
+vim cheat sheet - http://vim.rtorr.com/
+how i did myhelp - http://technosophos.com/2014/10/09/create-built-in-vim-cheatsheet.html
+
