@@ -4,22 +4,43 @@
 brew tap caskroom/cask
 
 # Browsers
-brew cask install google-chrome
-brew cask install firefox
+casks=(google-chrome firefox)
 
 # Utils
-brew cask install spectacle
-brew cask install iterm2
-brew cask install google-drive
-brew cask install evernote
-brew cask install caffeine
-brew cask install vmware-horizon-client
-brew cask install screenhero
-brew cask install disablemonitor
+casks+=(spectacle
+iterm2
+google-drive
+evernote
+caffeine
+vmware-horizon-client
+royal-tsx
+wireshark
+disablemonitor
+screenhero)
+
+# Editors
+casks+=(atom)
 
 # IM
-brew cask install slack
-brew cask install skype
+casks+=(slack skype)
 
 # Misc
-brew cask install spotify
+casks+=(spotify)
+
+# The update does all pkgs so just do it once
+echo "Updating..."
+brew cask update
+
+# Upgrade if already home brew installed else install
+for pkg in "${casks[@]}"; do
+  update_pkg="$(brew cask list -1 | grep ${pkg})"
+  if [[ ! "$update_pkg" ]]; then
+    echo "Installing '$pkg'..."
+    brew cask install "$pkg"
+  else
+    echo "'$update_pkg' already installed"
+  fi
+done
+
+# Cleaup
+brew cask cleanup
