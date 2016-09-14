@@ -25,7 +25,7 @@ casks+=(atom)
 casks+=(slack skype)
 
 # Misc
-casks+=(spotify)
+casks+=(spotify java)
 
 # The update does all pkgs so just do it once
 echo "Updating..."
