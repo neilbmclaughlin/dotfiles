@@ -16,7 +16,8 @@ vmware-horizon-client
 royal-tsx
 wireshark
 disablemonitor
-screenhero)
+screenhero
+keypassx)
 
 # Editors
 casks+=(atom)
