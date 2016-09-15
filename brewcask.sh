@@ -17,7 +17,7 @@ royal-tsx
 wireshark
 disablemonitor
 screenhero
-keypassx)
+keepassx)
 
 # Editors
 casks+=(atom)
@@ -26,7 +26,7 @@ casks+=(atom)
 casks+=(slack skype)
 
 # Misc
-casks+=(spotify java)
+casks+=(spotify java microsoft-azure-storage-explorer mongochef)
 
 # The update does all pkgs so just do it once
 echo "Updating..."

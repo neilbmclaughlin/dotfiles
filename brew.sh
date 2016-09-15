@@ -1,3 +1,5 @@
+
+
 #!/usr/bin/env bash
 
 which -s brew
@@ -11,13 +13,28 @@ fi
 # Sort out permissions
 sudo chown -R $(whoami):admin /usr/local
 
-brew install git
-brew install bash-completion
-brew install node
-brew install hub
-brew install heroku
-brew install ruby
-brew install vim
-brew install CMake
-brew install pass
-brew install gnupg
+# Utils
+brews=(git bash-completion hub heroku the_silver_searcher cmake pass gnupg)
+
+# THE editor?!
+brews+=(vim)
+
+# Languages
+brews+=(mono go rust python ruby node elixir erlang scala)
+
+# DBs
+brews+=(mongodb postgresql sqlite)
+
+# Upgrade if already home brew installed else install
+for pkg in "${brews[@]}"; do
+  if brew list -1 | grep -q "^${pkg}\$"; then
+    echo "Upgrading '$pkg'"
+    brew upgrade "{$pkg}"
+  else
+    echo "Installing '$pkg'"
+    brew install "{$pkg}"
+  fi
+done
+
+# Cleanup
+brew cleanup

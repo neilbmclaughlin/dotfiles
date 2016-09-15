@@ -35,7 +35,8 @@ zfi{ - fold lines between braces (zd to undo)
 $V%y - yank entire function 
 :set paste/nopaste when cutting and pasting
 :SyntasticToggleMode to get rid of errors when editing nunjucks files (:help syntastic-commands)
-
+:%y+ - yank whole doc to clipboard
+% s/formatTime/_\0/g
 
 Verbs c d > y v A i motion w (n)j 
 

@@ -18,6 +18,7 @@ ln -nfsv "$DOTFILES_DIR/.git-prompt.sh" ~
 ln -nfsv "$DOTFILES_DIR/.git-completion.bash" ~
 ln -nfsv "$DOTFILES_DIR/.vimrc" ~
 ln -nfsv "$DOTFILES_DIR/.tern-project" ~
+ln -nfsv "$DOTFILES_DIR/.vim/doc" ~/.vim
 
 printf "${GREEN}Finished creating symlinks...${NC}\n"
 

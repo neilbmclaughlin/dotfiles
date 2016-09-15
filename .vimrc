@@ -46,6 +46,7 @@ filetype plugin indent on    " required
 set autoread
 set expandtab
 set shiftwidth=2
+set tabstop=2
 set softtabstop=2
 set t_Co=256
 syntax on
