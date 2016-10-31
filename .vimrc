@@ -1,5 +1,4 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype plugin indent on                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -54,6 +53,7 @@ set background=dark
 colorscheme distinguished
 set relativenumber
 set number
+set foldmethod=syntax
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
