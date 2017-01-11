@@ -14,7 +14,7 @@ fi
 sudo chown -R $(whoami):admin /usr/local
 
 # Utils
-brews=(git bash-completion hub heroku the_silver_searcher cmake pass gnupg jq azure-cli)
+brews=(git bash-completion hub heroku the_silver_searcher cmake pass gnupg jq azure-cli docker)
 
 # THE editor?!
 brews+=(vim)
