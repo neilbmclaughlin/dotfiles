@@ -1,5 +1,3 @@
-
-
 #!/usr/bin/env bash
 
 which -s brew
@@ -14,7 +12,7 @@ fi
 sudo chown -R $(whoami):admin /usr/local
 
 # Utils
-brews=(git bash-completion hub heroku the_silver_searcher cmake pass gnupg jq azure-cli rancher)
+brews=(git bash-completion hub heroku the_silver_searcher cmake pass gnupg jq azure-cli rancher-cli shellcheck)
 
 # THE editor?!
 brews+=(vim)
