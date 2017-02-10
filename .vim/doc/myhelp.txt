@@ -15,6 +15,7 @@ CONTENTS (CTRL-T: jump to subject)
 ===============================================================================
 Examples                                               *myhelp-examples*
 
+:find *app - fuzzy find
 :vsp <filename> (:h split)
 verb(i|[0-9]*)noun
 d2w - delete 2 words

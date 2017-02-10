@@ -19,3 +19,7 @@
 	editor = /usr/local/bin/vim
 [credential]
 	helper = osxkeychain
+[github]
+	user = neilbmclaughlin
+[ghi]
+	token = !security find-internet-password -a neilbmclaughlin -s github.com -l 'ghi token' -w

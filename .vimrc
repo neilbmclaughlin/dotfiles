@@ -1,4 +1,3 @@
-filetype plugin indent on                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -29,6 +28,7 @@ Plugin 'Valloric/YouCompleteMe'
 " Keep Plugin commands between vundle#begin/end.
 
 call vundle#end()            " required
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -42,6 +42,10 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "
+set path+=**
+set wildmenu
+set nocompatible
+
 set autoread
 set expandtab
 set shiftwidth=2
