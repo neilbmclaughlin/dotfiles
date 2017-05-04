@@ -22,6 +22,9 @@ brews+=(mono go rust python ruby node elixir erlang scala)
 # DBs
 brews+=(mongodb postgresql sqlite)
 
+# Node utils 
+brews+=(yarn)
+
 # Upgrade if already home brew installed else install
 for pkg in "${brews[@]}"; do
   if brew list -1 | grep -q "^${pkg}\$"; then
