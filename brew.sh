@@ -11,7 +11,25 @@ fi
 sudo chown -R "$(whoami):admin" /usr/local
 
 # Utils
-brews=(git bash-completion hub ghi heroku the_silver_searcher cmake pass gnupg jq azure-cli rancher-cli shellcheck httpie)
+brews=(
+  git
+  bash-completion
+  hub
+  ghi
+  heroku
+  the_silver_searcher
+  cmake
+  pass
+  gnupg
+  jq
+  azure-cli
+  rancher-cli
+  shellcheck
+  httpie
+  yarn
+  coreutils
+  kibana
+  adr-tools)
 
 # THE editor?!
 brews+=(vim)

@@ -23,3 +23,7 @@
 	user = neilbmclaughlin
 [ghi]
 	token = !security find-internet-password -a neilbmclaughlin -s github.com -l 'ghi token' -w
+[url "https://github.com/"]
+	insteadOf = git@github.com:
+[url "https://"]
+	insteadOf = git://
