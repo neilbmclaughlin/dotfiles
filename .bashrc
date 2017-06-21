@@ -2,20 +2,25 @@
 . ~/.prompt
 . ~/.git-prompt.sh
 . ~/.git-completion.bash
-. ~/work/c2s-secrets/.env
+
+export $(tail -n -2  ~/work/c2s-secrets/.env | xargs) #tail as the first line is a comment line
+export $(cat ~/work/c2s-secrets/pharmacy-data-etl.env | xargs)
 
 # git autocomplete
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
+export VISUAL=vim
+
 export PATH=$PATH:$(npm -g bin)
 #Build path to user installed python packages for pip
 export PATH=$PATH:~/Library/Python/`python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))'`/bin
-source /usr/local/etc/bash_completion.d/password-store
+# source /usr/local/etc/bash_completion.d/password-store
 
 # added by travis gem
 [ -f /Users/neilmclaughlin/.travis/travis.sh ] && source /Users/neilmclaughlin/.travis/travis.sh
+
 ###-begin-npm-completion-###
 #
 # npm command completion script
