@@ -4,4 +4,4 @@ alias chrome='open /Applications/Google\ Chrome.app'
 alias atom='open /Applications/Atom.app'
 alias git=hub
 alias vi=vim
-alias cpr='git pull-request; ghi edit -l WIP $(ghi list -p --creator | tail -n +2 | sed "s/^[ ]*//g" | cut -d " " -f1)'
+alias cpr='git pull-request -F ./.github/PULL_REQUEST_TEMPLATE.md ; ghi edit -l WIP $(ghi list -p --creator | tail -n +2 | sed "s/^[ ]*//g" | cut -d " " -f1)'
