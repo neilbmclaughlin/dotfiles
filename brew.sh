@@ -22,11 +22,9 @@ brews=(
   pass
   gnupg
   jq
-  azure-cli
   rancher-cli
   shellcheck
   httpie
-  yarn
   coreutils
   kibana
   adr-tools)
