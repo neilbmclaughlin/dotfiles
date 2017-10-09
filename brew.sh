@@ -27,7 +27,8 @@ brews=(
   httpie
   coreutils
   kibana
-  adr-tools)
+  adr-tools
+  jmeter)
 
 # THE editor?!
 brews+=(vim)

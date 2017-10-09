@@ -18,7 +18,8 @@ wireshark
 disablemonitor
 screenhero
 keepassx
-docker)
+docker
+java)
 
 # Editors
 casks+=(atom)
