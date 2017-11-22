@@ -28,7 +28,8 @@ brews=(
   coreutils
   kibana
   adr-tools
-  jmeter)
+  jmeter
+  tmux)
 
 # THE editor?!
 brews+=(vim)
