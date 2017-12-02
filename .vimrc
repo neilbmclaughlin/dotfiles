@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Rename'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'davidosomething/syntastic-hbstidy'
 Plugin 'pangloss/vim-javascript'
 Plugin 'christoomey/vim-titlecase'
 Plugin 'christoomey/vim-sort-motion'
@@ -71,6 +72,15 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Map some filetypes, e.g. turn off html checkers on handlebars (I'm using my
+" hbstidy instead of html tidy)
+let g:syntastic_filetype_map = {
+      \   'html.handlebars': 'handlebars',
+      \ }
+
+" Use these checkers (handlebars is a different checker, not required for the
+" hbstidy plugin)
+let g:syntastic_handlebars_checkers  = ['handlebars', 'hbstidy']
 
 " Use global, static locations for back,swap and undo
 silent execute '!mkdir -p ~/.vim/tmp/backup'
