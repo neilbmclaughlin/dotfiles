@@ -8,17 +8,20 @@ casks=(google-chrome firefox)
 
 # Utils
 casks+=(spectacle
-iterm2
-google-drive
-evernote
-caffeine
-vmware-horizon-client
-royal-tsx
-wireshark
-disablemonitor
-screenhero
-keepassx
-docker)
+  iterm2
+  google-drive
+  evernote
+  caffeine
+  vmware-horizon-client
+  royal-tsx
+  wireshark
+  disablemonitor
+  screenhero
+  keepassx
+  docker
+  java
+  virtualbox
+)
 
 # Editors
 casks+=(atom)
