@@ -30,7 +30,7 @@ casks+=(atom)
 casks+=(slack skype)
 
 # Misc
-casks+=(spotify java microsoft-azure-storage-explorer robomongo kitematic)
+casks+=(spotify java microsoft-azure-storage-explorer robo-3t kitematic)
 
 # The update does all pkgs so just do it once
 echo "Updating..."
