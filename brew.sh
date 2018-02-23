@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+brew tap microsoft/mssql-preview https://github.com/Microsoft/homebrew-mssql-preview
+
 if [[ $(which -s brew) != 0 ]] ; then
     # Install Homebrew
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -53,6 +55,8 @@ for pkg in "${brews[@]}"; do
     brew install "{$pkg}"
   fi
 done
+
+brew install --no-sandbox msodbcsql mssql-tools
 
 # Cleanup
 brew cleanup
