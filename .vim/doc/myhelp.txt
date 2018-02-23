@@ -28,6 +28,7 @@ gcj5 - comment next 5 lines
 griw - replace inner word with contents of clipboard (aka register)
 gsip - sort paragraph 
 gcii - comment all lines in an indent
+g[~Uuiw] - change case on inner word
 gf - open the file under the cursor
 viwp - replace the word with yanked text
 =i{ formats the code block.
