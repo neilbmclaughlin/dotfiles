@@ -3,19 +3,24 @@
 . ~/.git-prompt.sh
 . ~/.git-completion.bash
 
-export $(tail -n -2  ~/work/c2s-secrets/.env | xargs) #tail as the first line is a comment line
-export $(cat ~/work/c2s-secrets/pharmacy-data-etl.env | xargs)
-
 # git autocomplete
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
+
 export VISUAL=vim
 
 #Build path to user installed python packages for pip
-export PATH=$PATH:~/Library/Python/`python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))'`/bin
+export PATH=$PATH:~/Library/Python/$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')/bin
 # source /usr/local/etc/bash_completion.d/password-store
+
+# Set up virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs
+export PROJECT_HOME=~/work/python
+export VIRTUALENVWRAPPER_PROJECT_FILENAME=.profile
+export VIRTUALENVWRAPPER_WORKON_CD=1
+source /usr/local/bin/virtualenvwrapper.sh
 
 # added by travis gem
 [ -f /Users/neilmclaughlin/.travis/travis.sh ] && source /Users/neilmclaughlin/.travis/travis.sh
