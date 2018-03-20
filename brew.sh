@@ -31,7 +31,9 @@ brews=(
   kibana
   adr-tools
   jmeter
-  tmux)
+  tmux
+  ctags
+)
 
 # THE editor?!
 brews+=(vim)

@@ -18,6 +18,7 @@ Examples                                               *myhelp-examples*
 :pc preview/scratch close
 :find *app - fuzzy find
 :vsp <filename> (:h split)
+* - find word under cursor
 verb(i|[0-9]*)noun
 d2w - delete 2 words
 ds' - delete surrounding quotes 'test'
@@ -25,6 +26,8 @@ cs'" - change ' for "  'test'
 ysiw" - surround with "  
 gcl - comment line
 gcj5 - comment next 5 lines
+gqi1p/j - wrap 1 paragraph/line
+gqq - wrap current line
 griw - replace inner word with contents of clipboard (aka register)
 gsip - sort paragraph 
 gcii - comment all lines in an indent
