@@ -1,3 +1,14 @@
+pip-install() {
+  pip install "$1" && \
+  sed -i '' "/$1[ =><]/d" requirements.txt && \
+  pip list --format=json | jq --arg name "$1" --raw-output '.[] | select(.name==$name)| "\(.name)==\(.version)"' >> requirements.txt
+}
+
+pip-uninstall() {
+  pip uninstall "$1" && \
+  sed -i '' "/$1[ =><]/d" requirements.txt
+}
+
 . ~/.aliases
 . ~/.prompt
 . ~/.git-prompt.sh

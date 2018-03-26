@@ -7,10 +7,11 @@ Neil's cheat sheet of Vim stuff he always forgets.
 CONTENTS (CTRL-T: jump to subject)
 
   1. Examples .........................................|myhelp-examples|
-  1. Movement .........................................|myhelp-movement|
-  2. Notes.............................................|myhelp-notes|
-  3. Rebuilding this file
-  4. Further Reading
+  2. Tags .............................................|myhelp-tags|
+  3. Movement .........................................|myhelp-movement|
+  4. Notes.............................................|myhelp-notes|
+  5. Rebuilding this file
+  6. Further Reading
 
 ===============================================================================
 Examples                                               *myhelp-examples*
@@ -61,6 +62,14 @@ Lexplore: https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.n
   R renames a file
   o opens the file in a horizontal split
   v opens the file in a vertical split
+
+===============================================================================
+Tags                                                     *myhelp-tags*
+
+ctrl-] : drill down
+ctrl-t : drill up
+:ts : show tag list
+:tags - show tabs traversed
 
 ===============================================================================
 Movement                                                 *myhelp-movement*
