@@ -21,6 +21,7 @@ casks+=(spectacle
   docker
   java
   virtualbox
+  vagrant
 )
 
 # Editors
@@ -34,7 +35,7 @@ casks+=(spotify java microsoft-azure-storage-explorer robo-3t kitematic)
 
 # The update does all pkgs so just do it once
 echo "Updating..."
-brew cask update
+brew update
 
 # Upgrade if already home brew installed else install
 for pkg in "${casks[@]}"; do
