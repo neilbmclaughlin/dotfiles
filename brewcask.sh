@@ -20,6 +20,7 @@ casks+=(spectacle
   keepassx
   docker
   java
+  dotnet-sdk
   virtualbox
   vagrant
 )

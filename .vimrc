@@ -62,11 +62,6 @@ set foldmethod=syntax
 
 set tags=./.tags,.tags
 
-let g:ale_completion_enabled = 1
-let g:ale_linters = { 'python': [ 'flake8' ], 'javascript': [ 'eslint' ] }
-let g:ale_fixers = { 'python': [ 'yapf' ], }
-let g:ale_fix_on_save = 1
-
 " Use global, static locations for back,swap and undo
 silent execute '!mkdir -p ~/.vim/tmp/backup'
 set backupdir=~/.vim/tmp/backup//
@@ -74,3 +69,5 @@ silent execute '!mkdir -p ~/.vim/tmp/swap'
 set directory=~/.vim/tmp/swap//
 silent execute '!mkdir -p ~/.vim/tmp/undo'
 set undodir=~/.vim/tmp/undo//
+
+runtime macros/matchit.vim

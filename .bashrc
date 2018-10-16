@@ -9,6 +9,12 @@ pip-uninstall() {
   sed -i '' "/$1[ =><]/d" requirements.txt
 }
 
+open-gitlab-mr() {
+  gitlab_url="https://git.nhschoices.net/"
+  mr_url=$(git get-merge $1 | grep 'See merge request' | cut -d ' ' -f8 | sed 's/\!/\/merge_requests\//')
+  open "${gitlab_url}${mr_url}"
+}
+
 . ~/.aliases
 . ~/.prompt
 . ~/.git-prompt.sh

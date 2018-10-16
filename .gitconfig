@@ -27,3 +27,5 @@
 	insteadOf = git@github.com:
 [url "https://"]
 	insteadOf = git://
+[commit]
+	verbose = true

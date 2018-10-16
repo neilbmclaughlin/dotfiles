@@ -44,6 +44,7 @@ $V%y - yank entire function
 :SyntasticToggleMode to get rid of errors when editing nunjucks files (:help syntastic-commands)
 :%y+ - yank whole doc to clipboard
 % s/formatTime/_\0/g
+:%!python -m json.tool - format json file
 
 Verbs c d > y v A i motion w (n)j 
 

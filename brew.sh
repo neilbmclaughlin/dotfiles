@@ -33,6 +33,7 @@ brews=(
   jmeter
   tmux
   ctags
+  exercism
 )
 
 # THE editor?!

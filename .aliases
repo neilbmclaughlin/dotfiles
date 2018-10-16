@@ -7,3 +7,5 @@ alias vi=vim
 alias cpr='git pull-request -F ./.github/PULL_REQUEST_TEMPLATE.md ; ghi edit -l WIP $(ghi list -p --creator | tail -n +2 | sed "s/^[ ]*//g" | cut -d " " -f1)'
 alias ls-scripts='jq .scripts package.json'
 alias which-env='[[ -z "$VIRTUAL_ENV" ]] && echo 'NoEnv' || basename "$VIRTUAL_ENV"'
+alias docker-compose-up='docker-compose down -v --remove-orphans && docker-compose up --build'
+alias rebase-master='git fetch origin master ; git rebase master'
