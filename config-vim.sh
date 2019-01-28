@@ -19,6 +19,3 @@ fi
 
 printf "Installing Vundle Plugins\n"
 vim +PluginInstall +qall
-
- # Install eslint_d for syntastic JS linting
- npm install -g eslint_d
