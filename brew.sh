@@ -48,6 +48,9 @@ brews+=(mongodb postgresql sqlite)
 # Node utils 
 brews+=(yarn)
 
+# Azure utils
+brews+=(azure-functions-core-tools)
+
 # Upgrade if already home brew installed else install
 for pkg in "${brews[@]}"; do
   if brew list -1 | grep -q "^${pkg}\$"; then
