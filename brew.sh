@@ -34,6 +34,7 @@ brews=(
   tmux
   ctags
   exercism
+  curl
 )
 
 # THE editor?!

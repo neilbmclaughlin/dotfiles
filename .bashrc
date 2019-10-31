@@ -25,19 +25,19 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-
 export VISUAL=vim
+export EDITOR=vim
 
 #Build path to user installed python packages for pip
 export PATH=$PATH:~/Library/Python/$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')/bin
 # source /usr/local/etc/bash_completion.d/password-store
 
-# Set up virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
-export PROJECT_HOME=~/work/python
-export VIRTUALENVWRAPPER_PROJECT_FILENAME=.profile
-export VIRTUALENVWRAPPER_WORKON_CD=1
-source /usr/local/bin/virtualenvwrapper.sh
+# Set up virtualenvwrapper - commented out consider using pipenv next time we need virtual python envs
+# export WORKON_HOME=~/.virtualenvs
+# export PROJECT_HOME=~/work/python
+# export VIRTUALENVWRAPPER_PROJECT_FILENAME=.profile
+# export VIRTUALENVWRAPPER_WORKON_CD=1
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # added by travis gem
 [ -f /Users/neilmclaughlin/.travis/travis.sh ] && source /Users/neilmclaughlin/.travis/travis.sh
@@ -103,3 +103,5 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(rbenv init -)"

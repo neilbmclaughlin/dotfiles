@@ -1,28 +1,31 @@
-*myhelp.txt*  For Vim version 7.4  Last change: 2014 October 8
-*myhelp*
+*myhelp-vim.txt*  For Vim version 7.4  Last change: 2014 April 18
+*myhelp-vim*
 
 Neil's cheat sheet of Vim stuff he always forgets.
 
 ===============================================================================
-CONTENTS (CTRL-T: jump to subject)
+CONTENTS (CTRL-]: jump to subject, CTRL-O to jump back)
 
-  1. Examples .........................................|myhelp-examples|
-  2. Tags .............................................|myhelp-tags|
-  3. Movement .........................................|myhelp-movement|
-  4. Notes.............................................|myhelp-notes|
-  5. Rebuilding this file
-  6. Further Reading
+Examples             |MyHelpVimExamples| 
+Movement             |MyHelpVimMovement|
+Notes                |MyHelpVimNotes|
+Rebuilding this file |MyHelpVimRebuildingThisFile|
+Further Reading      |MyHelpVimFurtherReading|
 
 ===============================================================================
-Examples                                               *myhelp-examples*
+Examples                                               *MyHelpVimExamples*
 
 :pc preview/scratch close
 :find *app - fuzzy find
 :vsp <filename> (:h split)
 * - find word under cursor
 verb(i|[0-9]*)noun
+
+Deletion
 d2w - delete 2 words
 ds' - delete surrounding quotes 'test'
+
+Change
 cs'" - change ' for "  'test'
 ysiw" - surround with "  
 gcl - comment line
@@ -65,15 +68,7 @@ Lexplore: https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.n
   v opens the file in a vertical split
 
 ===============================================================================
-Tags                                                     *myhelp-tags*
-
-ctrl-] : drill down
-ctrl-t : drill up
-:ts : show tag list
-:tags - show tabs traversed
-
-===============================================================================
-Movement                                                 *myhelp-movement*
+Movement                                                 *MyHelpVimMovement*
 
    - gg : got to top
    - ]] : next section
@@ -90,19 +85,18 @@ Movement                                                 *myhelp-movement*
       - z- : current line at the bottom
 
 ===============================================================================
-Notes                                               *myhelp-notes*
+Notes                                               *MyHelpVimNotes*
 
 ===============================================================================
-Rebuilding this file.
+Rebuilding this file.                               *MyHelpVimRebuildingThisFile*
 
 This file is loaded as a plugin. If you ever need to rebuild the tags file, run
 this command: >
    :helpt /path/to/this/directory
 You may need to restart VIM to see the updated version.
 ===============================================================================
-Further Reading.(gx to navigate to links)
+Further Reading.(gx to navigate to links)          *MyHelpVimFurtherReading*
 
 vim help http://vimdoc.sourceforge.net/htmldoc/help.html
 vim cheat sheet - http://vim.rtorr.com/
 how i did myhelp - http://technosophos.com/2014/10/09/create-built-in-vim-cheatsheet.html
-

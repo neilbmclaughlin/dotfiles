@@ -14,6 +14,8 @@ Plugin 'christoomey/vim-titlecase'
 Plugin 'christoomey/vim-sort-motion'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-vinegar'
 Plugin 'ReplaceWithRegister'
 Plugin 'vim-indent-object'
 Plugin 'kana/vim-textobj-user'
@@ -24,7 +26,9 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
-
+Plugin 'PProvost/vim-ps1.git'
+Plugin 'OrangeT/vim-csharp'
+Plugin 'OmniSharp/omnisharp-vim'
 
 " Keep Plugin commands between vundle#begin/end.
 
@@ -69,5 +73,10 @@ silent execute '!mkdir -p ~/.vim/tmp/swap'
 set directory=~/.vim/tmp/swap//
 silent execute '!mkdir -p ~/.vim/tmp/undo'
 set undodir=~/.vim/tmp/undo//
+
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
+
+let g:OmniSharp_server_stdio = 1
 
 runtime macros/matchit.vim

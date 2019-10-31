@@ -1,0 +1,59 @@
+*myhelp-tmux.txt*  For Vim version 7.4  Last change: 2014 April 18
+*myhelp-tmux*
+
+Neil's cheat sheet of tmux stuff he always forgets.
+
+===============================================================================
+CONTENTS (CTRL-]: jump to subject, CTRL-O to jump back)
+
+|TmuxExamples| 
+* |TmuxCommands|
+* |TmuxWindows|
+* |TmuxPanes|
+* |TmuxMisc|
+
+===============================================================================
+Examples                                               *TmuxExamples*
+
+_p = prefix (<ctrl-a>)
+
+*TmuxCommands*
+`tmux new -s {session_name}` - creates a new tmux session named session_name
+`tmux attach -t {session_name}` - attaches to an existing tmux session named session_name
+`tmux switch -t {session_name}` - switches to an existing session named session_name
+`tmux list-sessions` - lists existing tmux sessions
+_p d - detach the currently attached session
+_p r - reload ~/.tmux.conf
+
+*TmuxWindows*
+_p c - create a new window
+_p 0-9 - move to the window based on index
+_p <arrow> - nav around windows
+_p , - rename current window
+_p z - toggle zoom into/out of a window
+_p <ctrl> + <arrow> resize current window
+_p <space> - cycle through window arrangement
+_p w - display window list
+
+*TmuxPanes*
+_p - - splits the window into two horizontal panes
+_p | - splits the window into two vertical panes
+_p {} - swaps pane with another in the specified direction
+`tmux swap-pane -[UDLR]` - selects the next pane in the specified direction
+_p hjkl - pane navigation
+_p HJKL - pane resize (with repeat) 
+_p <ctrl-h>, <ctrl-l> - cycle through windows.
+
+`tmux select-pane -t [:.+]` - selects the next pane in numerical order
+
+*TmuxMisc* tmux commands
+`tmux list-keys `- lists out every bound key and the tmux command it runs
+`tmux list-commands` - lists out every tmux command and its arguments
+`tmux info` - lists out every session, window, pane, its pid, etc.
+`tmux source-file ~/.tmux.conf` - reloads the current tmux configuration (based on a default tmux config)
+
+Notes
+
+Source: https://thoughtbot.com/blog/a-tmux-crash-course
+
+ vim:tw=78:ts=8:noet:ft=help:norl:
