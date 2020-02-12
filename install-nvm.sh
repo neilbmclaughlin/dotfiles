@@ -1,7 +1,14 @@
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+if [ -n "$NVM_DIR" ]
+then
+  rm -rf "$NVM_DIR" ~/.npm
+  sed -i .bak '/NVM_DIR/d' ~/.zshrc
+  unset NVM_DIR
+fi
 
-#above script modifies env settings in .bashrc so re-run it
+echo "Installing NVM"
+curl -s -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | zsh
 
-. .bashrc
+. ~/.zshrc
 
-nvm alias default ${NODE_VERSION:8.4.0}
+nvm install 13.0
+nvm alias default 13.0 

@@ -6,11 +6,10 @@ if [[ ! -d ~/.vim/bundle/Vundle.vim/ ]]; then
 fi
 
 # Install YouCompleteMe
- ~/.vim/bundle/YouCompleteMe/install.py --tern-completer
+(cd ~/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.py --tern-completer)
 
  # Install Tern for Vim
  (cd ~/.vim/bundle/tern_for_vim && npm install)
-
 
 # Create dir for global swap, backup and undo files
 if [[ ! -d ~/.vim/tmp/ ]]; then

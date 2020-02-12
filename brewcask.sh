@@ -1,53 +1,38 @@
 #!/usr/bin/env bash
 
-# Get cask https://caskroom.github.io/
-brew tap caskroom/cask
+brewCaskIn() {
+  if brew cask list -1 "$1" > /dev/null;
+  then
+    echo "Checking for upgrade - '$pkg'"
+    brew cask upgrade "$1";
+  else
+    echo "Installing - '$pkg'"
+    brew cask install "$1";
+  fi
+}
 
 # Browsers
 casks=(google-chrome firefox)
 
 # Utils
-casks+=(spectacle
+casks+=(
   iterm2
-  google-drive
-  evernote
-  caffeine
-  vmware-horizon-client
-  royal-tsx
-  wireshark
-  disablemonitor
-  screenhero
-  keepassx
   docker
-  java
-  dotnet-sdk
-  virtualbox
-  vagrant
+  google-drive-file-stream
+  visual-studio-code
+  KeePassXC
+  spectacle
 )
 
 # Editors
 casks+=(atom)
 
 # IM
-casks+=(slack skype)
+casks+=(slack)
 
 # Misc
-casks+=(spotify java microsoft-azure-storage-explorer robo-3t kitematic)
+casks+=(spotify)
 
-# The update does all pkgs so just do it once
-echo "Updating..."
-brew update
-
-# Upgrade if already home brew installed else install
 for pkg in "${casks[@]}"; do
-  update_pkg="$(brew cask list -1 | grep ${pkg})"
-  if [[ ! "$update_pkg" ]]; then
-    echo "Installing '$pkg'..."
-    brew cask install "$pkg"
-  else
-    echo "'$update_pkg' already installed"
-  fi
+  brewCaskIn "$pkg"
 done
-
-# Cleaup
-brew cask cleanup

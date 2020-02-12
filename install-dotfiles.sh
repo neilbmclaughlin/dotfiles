@@ -8,8 +8,7 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 printf "${GREEN}Starting to symlink...${NC}\n"
 
-ln -nfsv "$DOTFILES_DIR/.bashrc" ~
-ln -nfsv "$DOTFILES_DIR/.bash_profile" ~
+ln -nfsv "$DOTFILES_DIR/.zshrc" ~
 ln -nfsv "$DOTFILES_DIR/.gitconfig" ~
 ln -nfsv "$DOTFILES_DIR/.aliases" ~
 ln -nfsv "$DOTFILES_DIR/.colors" ~
@@ -24,4 +23,4 @@ ln -nfsv "$DOTFILES_DIR/.vim/ftplugin" ~/.vim
 printf "${GREEN}Finished creating symlinks...${NC}\n"
 
 # Reload environment
-. ~/.bashrc
+. ~/.zshrc
