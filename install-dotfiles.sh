@@ -8,7 +8,6 @@ DOTFILES_DIR="$( pwd )"
 
 printf "${GREEN}Starting to symlink...${NC}\n"
 
-ln -nfsv "$DOTFILES_DIR/.zshrc" ~
 ln -nfsv "$DOTFILES_DIR/.tmux.conf" ~
 ln -nfsv "$DOTFILES_DIR/.gitconfig" ~
 ln -nfsv "$DOTFILES_DIR/.aliases" ~
@@ -18,7 +17,10 @@ ln -nfsv "$DOTFILES_DIR/.tern-project" ~
 ln -nfsv "$DOTFILES_DIR/.vim/doc" ~/.vim
 ln -nfsv "$DOTFILES_DIR/.vim/ftplugin" ~/.vim
 
+# don't replace existing .zshrc unless you explicitly want to
+# ln -nfsv "$DOTFILES_DIR/.zshrc" ~
+# . ~/.zshrc
+
 printf "${GREEN}Finished creating symlinks...${NC}\n"
 
 # Reload environment
-. ~/.zshrc
