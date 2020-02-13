@@ -23,6 +23,8 @@ During the install of Homebrew you will be prompted for your password.
 Other stuff to do
 =================
 
+* Install .NET Core
+  * https://dotnet.microsoft.com/download
 * Configure Slack for defra-digital and ddtsbdt
 * Install OpenVPN Client to allow access to Gitlab, Jenkins, etc
   * https://openvpn.net/downloads/openvpn-connect-v3-macos.dmg
