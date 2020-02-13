@@ -28,3 +28,5 @@ Other stuff to do
   * https://openvpn.net/downloads/openvpn-connect-v3-macos.dmg
   * You will need a .ovpn file to import which Cloud Service Centre (CSC) will provide.
   * Just for info, the parent page for the download is [here](https://openvpn.net/vpn-server-resources/connecting-to-access-server-with-macos/) and the section containing the download is 'Future replacement for OpenVPN Connect Client'
+* Install WebEx
+  * https://www.webex.com/downloads.html
