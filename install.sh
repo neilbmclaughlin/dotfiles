@@ -8,5 +8,6 @@ NC='\033[0m'
 . ./install-gem.sh
 . ./install-pip.sh
 . ./install-nvm.sh
+. ./install-terraform.sh
 . ./install-pkg.sh
 . ./config-vim.sh

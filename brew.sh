@@ -32,7 +32,6 @@ brews=(
   exercism
   curl
   kubectl
-  terraform
   helm@2
 )
 
@@ -47,4 +46,5 @@ for pkg in "${brews[@]}";
 do
   brewIn "$pkg"
 done
+
 brew cleanup
