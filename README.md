@@ -32,3 +32,5 @@ Other stuff to do
   * Just for info, the parent page for the download is [here](https://openvpn.net/vpn-server-resources/connecting-to-access-server-with-macos/) and the section containing the download is 'Future replacement for OpenVPN Connect Client'
 * Install WebEx
   * https://www.webex.com/downloads.html
+* Install Pluralsight
+  * https://www.pluralsight.com/product/downloads
