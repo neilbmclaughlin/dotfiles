@@ -28,6 +28,7 @@ brews=(
   shellcheck
   httpie
   tmux
+  tmuxinator
   ctags
   exercism
   curl

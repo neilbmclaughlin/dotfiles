@@ -9,6 +9,7 @@ DOTFILES_DIR="$( pwd )"
 printf "${GREEN}Starting to symlink...${NC}\n"
 
 ln -nfsv "$DOTFILES_DIR/.tmux.conf" ~
+ln -nfsv "$DOTFILES_DIR/.tmuxinator" ~
 ln -nfsv "$DOTFILES_DIR/.gitconfig" ~
 ln -nfsv "$DOTFILES_DIR/.aliases" ~
 ln -nfsv "$DOTFILES_DIR/.colors" ~
