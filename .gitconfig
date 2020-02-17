@@ -7,25 +7,20 @@
 	b = branch
 	com = checkout master
 	aa = add -A
-	d = diff
+  d = diff
+  fpwl = push --force-with-lease
 [user]
 	name = neil mclaughlin
-	email = neil.mclaughlin4@nhs.net
+	email = neil.mclaughlin@defra.gov.uk
 [color]
 	ui = true
 [push]
 	default = upstream
 [core]
-	editor = /usr/local/bin/vim
+	editor = vim
 [credential]
 	helper = osxkeychain
 [github]
 	user = neilbmclaughlin
-[ghi]
-	token = !security find-internet-password -a neilbmclaughlin -s github.com -l 'ghi token' -w
-[url "https://github.com/"]
-	insteadOf = git@github.com:
-[url "https://"]
-	insteadOf = git://
 [commit]
 	verbose = true
