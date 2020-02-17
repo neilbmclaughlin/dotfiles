@@ -10,5 +10,7 @@ curl -s -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh 
 
 . ~/.zshrc
 
-nvm install 13.0
-nvm alias default 13.0 
+nvm install 13
+nvm install 12
+nvm install 10
+nvm alias default 10
