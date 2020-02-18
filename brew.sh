@@ -32,7 +32,6 @@ brews=(
   ctags
   exercism
   curl
-  kubectl
   helm@2
 )
 
