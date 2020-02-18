@@ -11,5 +11,6 @@ NC='\033[0m'
 . ./install-nvm.sh
 . ./install-terraform.sh
 . ./install-pkg.sh
+. ./install-kubctl.sh
+. ./install-eksctl.sh
 . ./config-vim.sh
-. ./config-kubectl.sh

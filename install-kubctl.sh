@@ -1,4 +1,5 @@
-brew install kubectl
+brew install kubectl aws-iam-authenticator
+
 [ $(grep --count kubectl  ~/.aliases) -eq 0 ] && echo "alias k='kubectl'" >> ~/.aliases
 if [ ! -d ~/.kube/configs ]
 then
