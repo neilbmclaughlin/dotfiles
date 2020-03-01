@@ -74,6 +74,7 @@ plugins=(
   helm
   emoji
   aws
+  kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -106,6 +107,17 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.aliases
 
+# Changes to support eksctl autocompletion 
+fpath=($fpath ~/.zsh/completion)
+autoload -U compinit
+compinit
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# PYENV START
+eval "$(pyenv init -)"
+PATH=$PATH:/Users/neilmclaughlin/.local/bin
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
+# PYENV END
+export KUBECONFIG=~/.kube/configs/local/config:~/.kube/configs/ffcldneksawss001/config
