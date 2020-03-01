@@ -29,6 +29,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'PProvost/vim-ps1.git'
 Plugin 'OrangeT/vim-csharp'
 Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'pedrohdz/vim-yaml-folds'
+Plugin 'aliou/bats.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 
@@ -47,9 +49,18 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "
+
+set nocompatible
+set foldenable
+set foldmethod=marker
+au FileType sh let g:sh_fold_enabled=7
+au FileType sh let g:is_bash=1
+au FileType sh set foldmethod=syntax
+
+syntax enable
+
 set path+=**
 set wildmenu
-set nocompatible
 
 set autoread
 set expandtab
