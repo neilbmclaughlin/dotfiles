@@ -41,10 +41,17 @@ brews+=(vim)
 # DBs
 brews+=(postgresql)
 
+# Languages
+# Note: python & nodejs are installed using install-pyenv & install-nvm respectivly
+brews+=(groovy)
+
 # Upgrade if already home brew installed else install
 for pkg in "${brews[@]}";
 do
   brewIn "$pkg"
 done
+
+brew install romkatv/powerlevel10k/powerlevel10k
+echo 'source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
 brew cleanup
