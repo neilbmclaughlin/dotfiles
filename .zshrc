@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/neilmclaughlin/.oh-my-zsh"
+export ZSH="/Users/$(whoami)/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -125,7 +125,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # PYENV START
 eval "$(pyenv init -)"
-PATH=$PATH:/Users/neilmclaughlin/.local/bin
+PATH="$PATH:/Users/$(whoami)/.local/bin"
 export PYTHON_CONFIGURE_OPTS="--enable-framework"
 # PYENV END
 export KUBECONFIG=\
