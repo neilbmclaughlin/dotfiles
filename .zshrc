@@ -78,6 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   colorize
+  git-prompt
   helm
   emoji
   aws
@@ -127,11 +128,16 @@ eval "$(pyenv init -)"
 PATH=$PATH:/Users/neilmclaughlin/.local/bin
 export PYTHON_CONFIGURE_OPTS="--enable-framework"
 # PYENV END
-export KUBECONFIG=~/.kube/configs/local/config:~/.kube/configs/ffcldneksawss001/config
+export KUBECONFIG=\
+~/.kube/configs/local/config:\
+~/.kube/eksctl/clusters/DEVLDNFFCEKSCTR001:\
+~/.kube/eksctl/clusters/FFCLDNEKSAWSS001:\
+~/.kube/eksctl/clusters/FFCLDNEKSAWSS002:
 
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
-export AWS_REGION=eu-west-2
-export AWS_PROFILE=ffc-dev
+export AWS_DEFAULT_REGION=eu-west-2
+export AWS_PROFILE=ffc-developer@ffc-ops
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="/usr/local/opt/helm@2/bin:$PATH"
