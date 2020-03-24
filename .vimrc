@@ -91,6 +91,5 @@ let g:netrw_winsize = 25
 let g:OmniSharp_server_stdio = 1
 
 au BufReadPost Jenkinsfile set syntax=groovy
-au BufReadPost Dockerfile set syntax=yaml
 
 runtime macros/matchit.vim
