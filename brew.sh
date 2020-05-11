@@ -32,7 +32,8 @@ brews=(
   ctags
   exercism
   curl
-  helm@2
+  helm
+  derailed/k9s/k9s
 )
 
 # THE editor?!
