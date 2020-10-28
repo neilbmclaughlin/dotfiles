@@ -1,7 +1,5 @@
 alias ls='ls -aFhlG'
-alias chrome='open /Applications/Google\ Chrome.app'
 alias vi=vim
-alias cpr='git pull-request -F ./.github/PULL_REQUEST_TEMPLATE.md ; ghi edit -l WIP $(ghi list -p --creator | tail -n +2 | sed "s/^[ ]*//g" | cut -d " " -f1)'
 alias ls-scripts='jq .scripts package.json'
 alias jql='jq -C '.' | less -R'
 alias node-grep='grep -R --exclude-dir={node_modules,.git,coverage} --include=\*.{js,json,nunjucks,njk}'
