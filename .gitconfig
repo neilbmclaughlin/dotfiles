@@ -24,3 +24,5 @@
 	user = neilbmclaughlin
 [commit]
 	verbose = true
+[pull]
+	ff = only
