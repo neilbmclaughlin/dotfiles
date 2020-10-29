@@ -17,6 +17,7 @@ ln -nfsv "$DOTFILES_DIR/.vimrc" ~
 ln -nfsv "$DOTFILES_DIR/.tern-project" ~
 ln -nfsv "$DOTFILES_DIR/.vim/doc" ~/.vim
 ln -nfsv "$DOTFILES_DIR/.vim/ftplugin" ~/.vim
+ln -nfsv "$DOTFILES_DIR/.Brewfile" ~/.Brewfile
 
 # don't replace existing .zshrc unless you explicitly want to
 # ln -nfsv "$DOTFILES_DIR/.zshrc" ~
