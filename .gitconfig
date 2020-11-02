@@ -18,6 +18,7 @@
 	default = upstream
 [core]
 	editor = vim
+	excludesfile = /Users/neilmclaughlin/.gitignore
 [credential]
 	helper = osxkeychain
 [github]
