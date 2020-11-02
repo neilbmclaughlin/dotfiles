@@ -4,3 +4,4 @@ alias ls-scripts='jq .scripts package.json'
 alias jql='jq -C '.' | less -R'
 alias node-grep='grep -R --exclude-dir={node_modules,.git,coverage} --include=\*.{js,json,nunjucks,njk}'
 alias k='kubectl'
+alias mux=tmuxinator
