@@ -1,7 +1,7 @@
-# /Users/neilmclaughlin/.config/tmuxinator/ffc-ce.yml
+# /Users/neilmclaughlin/.tmuxinator/xws-contact-web.yml
 
-name: flood-beta
-root: ~/work/flood-beta/flood-beta-docker
+name: xws-contact-web
+root: ~/work/xws-contact-web
 
 # Optional tmux socket
 # socket_name: foo
@@ -10,18 +10,24 @@ root: ~/work/flood-beta/flood-beta-docker
 # project hooks.
 
 # Project hooks
+
 # Runs on project start, always
 # on_project_start: command
+
 # Run on project start, the first time
 # on_project_first_start: command
+
 # Run on project start, after the first time
+# on_project_restart: command
+
 # Run on project exit ( detaching from tmux session )
 # on_project_exit: command
+
 # Run on project stop
 # on_project_stop: command
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: nvm use 10
+# pre_window: rbenv shell 2.0.0-p247
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -30,33 +36,18 @@ root: ~/work/flood-beta/flood-beta-docker
 # tmux_command: byobu
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
-startup_window: flood-app-tests
+# startup_window: editor
 
 # Specifies (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
-startup_pane: 1
+# startup_pane: 1
 
 # Controls whether the tmux session should be attached to automatically. Defaults to true.
 # attach: false
 
 windows:
-  - flood-app:
-      root: ~/work/flood-beta/flood-app
-      layout: 4d26,238x60,0,0{139x60,0,0,0,98x60,140,0[98x30,140,0,1,98x29,140,31,2]}
+  - editor:
+      root: ~/work/xws-contact-web
+      layout: main-vertical
       panes:
-        - vim -S
-        - git pull && npm install && source ~/work/flood-beta/lfwconfig/node/configDevLdn/flood-app.profile && FLOOD_APP_SERVICE_URL="http://localhost:8050" FLOOD_APP_SITE_URL="http://localhost:3000" node index.js
-        -
-  - flood-service:
-      root: ~/work/flood-beta/flood-service
-      layout: 4d26,238x60,0,0{139x60,0,0,0,98x60,140,0[98x30,140,0,1,98x29,140,31,2]}
-      panes:
-        - vim -S
-        - git pull && npm install && source ~/work/flood-beta/lfwconfig/node/configDevLdn/flood-service.profile && node index.js
-        -
-  - flood-app-tests:
-      root: ~/work/flood-beta/flood-service-tests-v2
-      layout: 4d26,238x60,0,0{139x60,0,0,0,98x60,140,0[98x30,140,0,1,98x29,140,31,2]}
-      panes:
-        - vim -S
-        - git pull
-        -
+        - vim
+        - git pull 

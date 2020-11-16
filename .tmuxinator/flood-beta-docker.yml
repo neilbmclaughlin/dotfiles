@@ -1,6 +1,6 @@
-# /Users/neilmclaughlin/.config/tmuxinator/flood-beta-full-stack
+# /Users/neilmclaughlin/.config/tmuxinator/ffc-ce.yml
 
-name: flood-beta-full-stack
+name: flood-beta
 root: ~/work/flood-beta/flood-beta-docker
 
 # Optional tmux socket
@@ -20,8 +20,8 @@ root: ~/work/flood-beta/flood-beta-docker
 # Run on project stop
 # on_project_stop: command
 
-on_project_first_start: ../flood-db/refresh-backup && docker-compose -f docker-compose.yaml -f docker-compose-local-db.yaml up --build --detach
-on_project_stop: docker-compose -f docker-compose.yaml -f docker-compose-local-db.yaml down --volumes --remove-orphans
+on_project_first_start: docker-compose -f docker-compose.yaml -f docker-compose-debug.yaml up --build --detach
+on_project_stop: docker-compose -f docker-compose.yaml -f docker-compose-debug.yaml down --volumes --remove-orphans
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: nvm use 10
@@ -46,31 +46,25 @@ windows:
       layout: main-vertical
       panes:
         - docker-compose logs --follow
-        - git pull
+        - git pull 
   - flood-app:
       root: ~/work/flood-beta/flood-app
-      layout: 4d26,238x60,0,0{139x60,0,0,0,98x60,140,0[98x30,140,0,1,98x29,140,31,2]}
+      layout: 4d26,238x60,0,0{139x60,0,0,0,98x60,140,0[98x30,140,0,1,98x29,140,31,2]} 
       panes:
-        - vim -S
-        - git pull
-        -
+        - vim -S 
+        - git pull 
+        - 
   - flood-service:
       root: ~/work/flood-beta/flood-service
       layout: 4d26,238x60,0,0{139x60,0,0,0,98x60,140,0[98x30,140,0,1,98x29,140,31,2]}
       panes:
-        - vim -S
-        - git pull
-        -
-  - flood-db:
-      root: ~/work/flood-beta/flood-db
-      layout: main-vertical
-      panes:
-        -
-        -
+        - vim -S 
+        - git pull 
+        - 
   - flood-app-tests:
       root: ~/work/flood-beta/flood-service-tests-v2
-      layout: main-vertical
+      layout: 4d26,238x60,0,0{139x60,0,0,0,98x60,140,0[98x30,140,0,1,98x29,140,31,2]}
       panes:
-        - git pull
-        -
-        -
+        - vim -S 
+        - git pull 
+        - 
