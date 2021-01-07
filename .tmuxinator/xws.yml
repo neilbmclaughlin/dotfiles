@@ -1,7 +1,7 @@
 # /Users/neilmclaughlin/.tmuxinator/xws-contact-web.yml
 
-name: xws-contact-web
-root: ~/work/xws/xws-contact-web
+name: xws
+root: ~/work/xws/xws
 
 # Optional tmux socket
 # socket_name: foo
@@ -45,15 +45,24 @@ root: ~/work/xws/xws-contact-web
 # attach: false
 
 windows:
+  - xws:
+      root: ~/work/xws/xws
+      layout: main-vertical
+      panes:
+        - vim -S
+        - git pull 
+        - 
   - xws-contact-web:
-      root: ~/work/xws/xws-contact-web
+      root: ~/work/xws/xws/subsystems/contact/web
       layout: main-vertical
       panes:
         - vim -S
-        - git pull 
-  - xws-contact-web-config:
-      root: ~/work/xws/xws-contact-web-config
+        - 
+        - 
+  - xws-alert-web:
+      root: ~/work/xws/xws/subsystems/alert/web
       layout: main-vertical
       panes:
         - vim -S
-        - git pull 
+        - 
+        - 
