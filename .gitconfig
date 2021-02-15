@@ -9,6 +9,7 @@
 	aa = add -A
   d = diff
   fpwl = push --force-with-lease
+	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 [user]
 	name = neil mclaughlin
 	email = neil.mclaughlin@defra.gov.uk
