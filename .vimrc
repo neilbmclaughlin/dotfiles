@@ -18,9 +18,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-vinegar'
 Plugin 'ReplaceWithRegister'
 Plugin 'vim-indent-object'
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-textobj-line'
-Plugin 'moll/vim-node'
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'Glench/Vim-Jinja2-Syntax'
@@ -31,6 +28,7 @@ Plugin 'OrangeT/vim-csharp'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'pedrohdz/vim-yaml-folds'
 Plugin 'aliou/bats.vim'
+Plugin 'junegunn/vim-easy-align'
 
 " Keep Plugin commands between vundle#begin/end.
 
@@ -93,3 +91,9 @@ let g:OmniSharp_server_stdio = 1
 au BufReadPost Jenkinsfile set syntax=groovy
 
 runtime macros/matchit.vim
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
