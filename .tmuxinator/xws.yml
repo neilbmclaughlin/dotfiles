@@ -1,7 +1,7 @@
-# /Users/neilmclaughlin/.tmuxinator/xws-contact-web.yml
+# /Users/neilmclaughlin/.tmuxinator/xws.yml
 
 name: xws
-root: ~/work/xws/xws
+root: ~/work/xws
 
 # Optional tmux socket
 # socket_name: foo
@@ -36,7 +36,7 @@ root: ~/work/xws/xws
 # tmux_command: byobu
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
-# startup_window: editor
+startup_window: development
 
 # Specifies (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
 # startup_pane: 1
@@ -45,22 +45,50 @@ root: ~/work/xws/xws
 # attach: false
 
 windows:
-  - xws:
-      root: ~/work/xws/xws
-      layout: main-vertical
-      panes:
-        - vim -S
-        - git pull 
-        - 
-  - xws-contact-web:
-      root: ~/work/xws/xws/subsystems/contact/web
+  - development:
+      root: ~/work/xws/development
       layout: main-vertical
       panes:
         - vim -S
         - 
         - 
-  - xws-alert-web:
-      root: ~/work/xws/xws/subsystems/alert/web
+  - contact-web:
+      root: ~/work/xws/contact-web
+      layout: main-vertical
+      panes:
+        - vim -S
+        - 
+        - 
+  - alert-web:
+      root: ~/work/xws/alert-web
+      layout: main-vertical
+      panes:
+        - vim -S
+        - 
+        - 
+  - notification-api:
+      root: ~/work/xws/notification-api
+      layout: main-vertical
+      panes:
+        - vim -S
+        - 
+        - 
+  - db:
+      root: ~/work/xws/db
+      layout: main-vertical
+      panes:
+        - vim -S
+        - 
+        - 
+  - config:
+      root: ~/work/xws/config
+      layout: main-vertical
+      panes:
+        - vim -S
+        - 
+        - 
+  - core:
+      root: ~/work/xws/code
       layout: main-vertical
       panes:
         - vim -S
