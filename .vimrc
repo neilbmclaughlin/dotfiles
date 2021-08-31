@@ -97,3 +97,6 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" format json to standardjs rules
+nmap =j :%s/^[ \t]*\([A-Za-z_].*\):/"\1":/e<CR>:%!python -m json.tool<CR>gg=G

@@ -21,33 +21,51 @@ Examples                                               *MyHelpVimExamples*
 * - find word under cursor
 verb(i|[0-9]*)noun
 
-Deletion
+Deletion/Replacement
+griw - replace inner word with contents of register
 d2w - delete 2 words
 ds' - delete surrounding quotes 'test'
+"_ddp - delete current line to null buffer and paste in register
+"+Y - yank current line to clipboard
+viwp - replace the word with yanked text
 
-Change
+Surrounds
 cs'" - change ' for "  'test'
 ysiw" - surround with "  
+
+Comments
 gcl - comment line
 gcj5 - comment next 5 lines
+
+Formatting
 gqi1p/j - wrap 1 paragraph/line
 gqq - wrap current line
-griw - replace inner word with contents of clipboard (aka register)
 gsip - sort paragraph 
 gcii - comment all lines in an indent
-g[~Uuiw] - change case on inner word
-gf - open the file under the cursor
-viwp - replace the word with yanked text
+g~iw - change case on inner word
+gg=G - format whole document
 =i{ formats the code block.
 =2i{ formats the current block and the block around it.
+gaip*| - format markdown table
+
+Folds
 zfi{ - fold lines between braces (zd to undo)
-:bufdo e! - reload all buffers
+zm(M) - more(all)
+zr(R) - reduce(all)
+zA - alternate for fold @ cursor
+
+Misc
 $V%y - yank entire function 
+:bufdo e! - reload all buffers
+gf - open the file under the cursor
 :set paste/nopaste when cutting and pasting
 :SyntasticToggleMode to get rid of errors when editing nunjucks files (:help syntastic-commands)
 :%y+ - yank whole doc to clipboard
-% s/formatTime/_\0/g
-:%!python -m json.tool - format json file
+% s/formatTime/_\0/g - replace formatTime with _formatTime
+:%s/^[ \t]*\([A-Za-z_].*\):/"\1":/ - quote unquoted keys in json file
+:%!python -m json.tool - format json file key per line (indenting is 4 spaces)
+=j - nmap to format json file using both python + gg=G
+:so ~/.vimrc - reload vimrc (useful to pick up changes when vim has been started with -S)
 
 Verbs c d > y v A i motion w (n)j 
 
@@ -80,7 +98,7 @@ Movement                                                 *MyHelpVimMovement*
    - CTRL-]: jump to subject
    - CTRL-T/O: jump back (f0rther)
    - z commands:
-      - z : Current line at the top
+      - z<return> : Current line at the top
       - z. : current line at the center
       - z- : current line at the bottom
 
