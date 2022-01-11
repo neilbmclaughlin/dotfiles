@@ -5,3 +5,4 @@ alias jql='jq -C '.' | less -R'
 alias node-grep='grep -R --exclude-dir={node_modules,.git,coverage} --include=\*.{js,json,nunjucks,njk}'
 alias mux=tmuxinator
 alias cplt=copilot
+alias terraform='/usr/local/opt/terraform@0.13/bin/terraform'

@@ -1,7 +1,7 @@
-# /Users/neilmclaughlin/.tmuxinator/xws.yml
+# /Users/neilmclaughlin/.tmuxinator/terragrunt-test.yml
 
-name: xws
-root: ~/work/xws
+name: terragrunt-test
+root: ~/work
 
 # Optional tmux socket
 # socket_name: foo
@@ -36,7 +36,7 @@ root: ~/work/xws
 # tmux_command: byobu
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
-startup_window: development
+startup_window: terraform-test
 
 # Specifies (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
 # startup_pane: 1
@@ -47,59 +47,24 @@ startup_window: development
 <% @layout = "4d26,238x60,0,0{139x60,0,0,0,98x60,140,0[98x30,140,0,1,98x29,140,31,2]}" %>
 
 windows:
-  - development:
-      root: ~/work/xws/flood-xws-development
+  - terraform-test:
+      root: ~/work/terraform-test
       layout: <%= @layout %>
       panes:
         - vim -S
         - 
         - 
-  - contact-web:
-      root: ~/work/xws/flood-xws-contact-web
+  - xws-tf-files:
+      root: ~/work/xws-tf-files
       layout: <%= @layout %>
       panes:
         - vim -S
         - 
         - 
-  - subscription-api:
-      root: ~/work/xws/flood-xws-subscription-api
+  - terragrunt-docs:
+      root: ~/work/terragrunt/docs
       layout: <%= @layout %>
       panes:
         - vim -S
-        - 
-        - 
-  - area-api:
-      root: ~/work/xws/flood-xws-area-api
-      layout: <%= @layout %>
-      panes:
-        - vim -S
-        - 
-        - 
-  - alert-web:
-      root: ~/work/xws/flood-xws-alert-web
-      layout: <%= @layout %>
-      panes:
-        - vim -S
-        - 
-        - 
-  - notification:
-      root: ~/work/xws/flood-xws-notification-resources
-      layout: <%= @layout %>
-      panes:
-        - vim -S
-        - 
-        - 
-  - db:
-      root: ~/work/xws/flood-xws-db
-      layout: <%= @layout %>
-      panes:
-        - vim -S
-        - 
-        - 
-  - config:
-      root: ~/work/xws/flood-xws-config
-      layout: <%= @layout %>
-      panes:
-        - vim -S
-        - 
+        - docker compose up --build
         - 
