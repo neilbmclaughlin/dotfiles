@@ -7,11 +7,11 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Rename'
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 Plugin 'pangloss/vim-javascript'
 Plugin 'christoomey/vim-titlecase'
 Plugin 'christoomey/vim-sort-motion'
+Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
@@ -21,7 +21,6 @@ Plugin 'vim-indent-object'
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'ternjs/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'PProvost/vim-ps1.git'
 Plugin 'OrangeT/vim-csharp'
@@ -29,6 +28,7 @@ Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'pedrohdz/vim-yaml-folds'
 Plugin 'aliou/bats.vim'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'github/copilot.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 
@@ -54,6 +54,10 @@ set foldmethod=marker
 au FileType sh let g:sh_fold_enabled=7
 au FileType sh let g:is_bash=1
 au FileType sh set foldmethod=syntax
+
+" Spell-check Markdown files and Git Commit Messages
+autocmd FileType markdown setlocal spell
+autocmd FileType gitcommit setlocal spell
 
 syntax enable
 
@@ -86,7 +90,7 @@ set undodir=~/.vim/tmp/undo//
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
-let g:OmniSharp_server_stdio = 1
+" let g:OmniSharp_server_stdio = 1
 
 au BufReadPost Jenkinsfile set syntax=groovy
 
@@ -99,4 +103,4 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " format json to standardjs rules
-nmap =j :%s/^[ \t]*\([A-Za-z_].*\):/"\1":/e<CR>:%!python -m json.tool<CR>gg=G
+nmap =j :% !jq .

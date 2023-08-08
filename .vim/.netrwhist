@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/neil/dotfiles/.vim/ftplugin'
+let g:netrw_dirhist_5='/Users/neil/dotfiles/.vim'
+let g:netrw_dirhist_4='/Users/neil/dotfiles'
+let g:netrw_dirhist_3='/Users/neil/dotfiles/.vim'
+let g:netrw_dirhist_2='/Users/neil/work/defra/cff/flood-service/server/services'
+let g:netrw_dirhist_1='/Users/neil/work/defra/cff/flood-service/server'
+let g:netrw_dirhist_0='/Users/neil/work/defra/cff/flood-service/server/routes'
+let g:netrw_dirhist_9='/Users/neil/work/defra/cff/flood-data'
+let g:netrw_dirhist_8='/Users/neil/work/defra/cff/flood-data/config'
+let g:netrw_dirhist_7='/Users/neil/work/defra/cff/flood-data/lib/functions'

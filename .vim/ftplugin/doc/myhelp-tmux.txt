@@ -10,10 +10,11 @@ CONTENTS (CTRL-]: jump to subject, CTRL-O to jump back)
 * |TmuxCommands|
 * |TmuxWindows|
 * |TmuxPanes|
+* |TmuxPane|
 * |TmuxMisc|
 
 ===============================================================================
-Examples                                               *MyHelpTmuxExamples*
+Examples                                               *TmuxExamples*
 
 _p = prefix (<ctrl-a>)
 
@@ -43,7 +44,9 @@ _p {} - swaps pane with another in the specified direction
 _p hjkl - pane navigation
 _p HJKL - pane resize (with repeat) 
 _p <ctrl-h>, <ctrl-l> - cycle through windows.
-_p [ <ctrl-b> <ctrl-f> - enable buffer scrolling and scroll bwd/fwd
+
+TmuxPane
+_p [ - text scrolling within pane (vim nav key mappings e.g. ctrl-f/ctrl-b to scroll back/forward, ?/ search forward/backward)
 
 `tmux select-pane -t [:.+]` - selects the next pane in numerical order
 
@@ -53,10 +56,9 @@ _p [ <ctrl-b> <ctrl-f> - enable buffer scrolling and scroll bwd/fwd
 `tmux info` - lists out every session, window, pane, its pid, etc.
 `tmux source-file ~/.tmux.conf` - reloads the current tmux configuration (based on a default tmux config)
 
-===============================================================================
-Notes                                               *MyHelpTmuxNotes*
-
+Notes
 
 Source: https://thoughtbot.com/blog/a-tmux-crash-course
+Cheat Sheet: https://tmuxcheatsheet.com
 
- vim:tw=78:ts=8:noet:ft=help:norl modifiable 
+ vim:tw=78:ts=8:noet:ft=help:norl:

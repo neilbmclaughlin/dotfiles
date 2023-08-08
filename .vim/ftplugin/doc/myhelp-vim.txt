@@ -27,8 +27,6 @@ d2w - delete 2 words
 ds' - delete surrounding quotes 'test'
 "_ddp - delete current line to null buffer and paste in register
 "+Y - yank current line to clipboard
-"+yi{ - yank contents between braces into clipboard
-
 viwp - replace the word with yanked text
 
 Surrounds
@@ -56,14 +54,6 @@ zm(M) - more(all)
 zr(R) - reduce(all)
 zA - alternate for fold @ cursor
 
-Spelling
-:set spell spelllang=en_gb 
-:set nospell
-z= - see suggections
-zg - add speeling to dictionary
-]s, [s move through missspellings
-
-
 Misc
 $V%y - yank entire function 
 :bufdo e! - reload all buffers
@@ -72,10 +62,10 @@ gf - open the file under the cursor
 :SyntasticToggleMode to get rid of errors when editing nunjucks files (:help syntastic-commands)
 :%y+ - yank whole doc to clipboard
 % s/formatTime/_\0/g - replace formatTime with _formatTime
-%s/^\([ \t]*\)\([A-Za-z_].*\):/\1"\2":/ - quote unquoted keys in json file
-=j - nmap to format json file using jq
+:%s/^[ \t]*\([A-Za-z_].*\):/"\1":/ - quote unquoted keys in json file
+:%!python -m json.tool - format json file key per line (indenting is 4 spaces)
+=j - nmap to format json file using both python + gg=G
 :so ~/.vimrc - reload vimrc (useful to pick up changes when vim has been started with -S)
-:helpc - close help window without having to vavigate there
 
 Verbs c d > y v A i motion w (n)j 
 
@@ -103,7 +93,6 @@ Movement                                                 *MyHelpVimMovement*
    - ]m : next method
    - [m : back to the start of the method
    - ) : Next sentence
-   - CTRL-o : back to previous cursor position
    - CTRL-D : Down half a page
    - CTRL-U : Up half a page
    - CTRL-]: jump to subject
@@ -129,5 +118,3 @@ Further Reading.(gx to navigate to links)          *MyHelpVimFurtherReading*
 vim help http://vimdoc.sourceforge.net/htmldoc/help.html
 vim cheat sheet - http://vim.rtorr.com/
 how i did myhelp - http://technosophos.com/2014/10/09/create-built-in-vim-cheatsheet.html
-
-vim:tw=78:ts=8:noet:ft=help:norl modifiable 
