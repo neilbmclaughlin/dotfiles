@@ -1,11 +1,11 @@
 [alias]
 	st = status
-	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-	co = checkout
-	cob = checkout -b
-	ci = commit -m
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  sw = switch
+  swc = switch -c
+	swm = switch master
+	cm = commit -m
 	b = branch
-	com = checkout master
 	aa = add -A
   d = diff
   fpwl = push --force-with-lease
@@ -17,9 +17,10 @@
 	ui = true
 [push]
 	default = upstream
+	autoSetupRemote = true
 [core]
 	editor = vim
-	excludesfile = /Users/neilmclaughlin/.gitignore
+	excludesfile = /Users/neil/.git/info/exclude
 [credential]
 	helper = osxkeychain
 [github]
