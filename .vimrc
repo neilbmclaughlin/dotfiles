@@ -1,5 +1,9 @@
 
 " set the runtime path to include Vundle and initialize
+" NOTE vundle is not actively maintained, tried using vim's built in package
+" functionality but upgrading packages seems hard work than it should be 
+" options are vim-plug and dein.vim or to use a simple shell script to clone
+"
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
