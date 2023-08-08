@@ -6,11 +6,12 @@ then
 fi
 
 echo "Installing NVM"
-curl -s -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | zsh
+curl -s -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.1/install.sh | zsh
 
 . ~/.zshrc
 
+nvm install 16
 nvm install 13
 nvm install 12
 nvm install 10
-nvm alias default 10
+nvm alias default 16
