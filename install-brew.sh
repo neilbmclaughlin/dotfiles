@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 echo "Install Homebrew and packages"
-brew bundle
+brew bundle install --file ./.Brewfile
