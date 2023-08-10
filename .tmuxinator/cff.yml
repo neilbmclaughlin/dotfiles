@@ -93,4 +93,4 @@ windows:
       root: ~/work/defra/cff/lfwconfig
       layout: <%= @layout %>
       panes:
-        - chtgpt
+        - chatgpt
