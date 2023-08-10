@@ -1,3 +1,4 @@
 .vim/tmp/
 .vim/bundle/
 .Brewfile.lock.json
+.vim/.netrwhist

@@ -7,7 +7,7 @@ fi
 
 # Install YouCompleteMe
 printf "Installing YCM\n"
-(cd ~/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.py)
+(cd ~/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.py --ts-completer)
 
 # Create dir for global swap, backup and undo files
 if [[ ! -d ~/.vim/tmp/ ]]; then
