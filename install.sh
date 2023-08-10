@@ -13,4 +13,4 @@ NC='\033[0m'
 . ./install-pkg.sh
 . ./install-kubectl.sh
 . ./install-eksctl.sh
-. ./config-vim.sh
+. ./config-nvim.sh

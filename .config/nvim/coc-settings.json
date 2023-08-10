@@ -1,0 +1,9 @@
+{
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.options": {
+    "configFile": "./node_modules/standard/eslintrc.json"
+  },
+  "eslint.run": "onSave",
+  "eslint.format.enable": true
+}

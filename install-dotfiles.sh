@@ -14,11 +14,10 @@ ln -nfsv "$DOTFILES_DIR/.gitconfig" ~
 ln -nfsv "$DOTFILES_DIR/.aliases" ~
 ln -nfsv "$DOTFILES_DIR/.colors" ~
 ln -nfsv "$DOTFILES_DIR/.vimrc" ~
-ln -nfsv "$DOTFILES_DIR/.tern-project" ~
-ln -nfsv "$DOTFILES_DIR/.vim/doc" ~/.vim
-ln -nfsv "$DOTFILES_DIR/.vim/ftplugin" ~/.vim
-ln -nfsv "$DOTFILES_DIR/.Brewfile" ~/.Brewfile
+ln -nfsv "$DOTFILES_DIR/.Brewfile" ~
+ln -nfsv "$DOTFILES_DIR/.vim" ~/.vim
 ln -nfsv "$DOTFILES_DIR/.global-gitignore" ~/.gitignore
+ln -nfsv "$DOTFILES_DIR/.config/nvim" ~/.config/nvim
 
 # don't replace existing .zshrc unless you explicitly want to
 # ln -nfsv "$DOTFILES_DIR/.zshrc" ~
