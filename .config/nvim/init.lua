@@ -144,9 +144,12 @@ require('lazy').setup({
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
+    -- Note: need to add Nerd fonts for non-ascii character displays in iTerm profile
+    -- Note that selecting the 'Use built-in Powerline glyphs' option nearly worked excpet for the fileformat 
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
     opts = {
       options = {
-        icons_enabled = false,
+        icons_enabled = true,
         theme = 'onedark',
         component_separators = '|',
         section_separators = '',
