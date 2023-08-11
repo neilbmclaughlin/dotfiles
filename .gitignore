@@ -2,3 +2,4 @@
 .vim/bundle/
 .Brewfile.lock.json
 .vim/.netrwhist
+.config/nvim/lazy-lock.json
