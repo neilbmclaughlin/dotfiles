@@ -74,6 +74,21 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  -- misc plugins
+  'tpope/vim-surround',
+
+  -- { dir = '~/work/neilbmclaughlin/nvim-lint' },
+  -- to get this to work using standard had to:
+  --   npm install --global eslint-config-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-n eslint
+  --   eslint --init
+  --     # choose 'no' when offered the option to upgrade eslint and install dependencies
+  --     # choose 'json' format
+  --   git config --global core.excludesfile ~/.gitignore
+  --   ensure created eslint file (eslintrc.json) is added to your local ~/.gitignore
+  --   note 1: these steps also allow lsp eslint to work
+  --   note 2: it's a bit hacky and would be better to have a standard specific plugin
+  'mfussenegger/nvim-lint',
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -256,6 +271,8 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+vim.o.relativenumber = true
 
 -- [[ Basic Keymaps ]]
 
@@ -443,6 +460,8 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
+  -- eslint = { options = { overrideConfigFile = "./node_modules/standard/eslintrc.json" } },
+  -- eslint = {},
   tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 

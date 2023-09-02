@@ -20,7 +20,7 @@
 	autoSetupRemote = true
 [core]
 	editor = vim
-	excludesfile = /Users/neil/.git/info/exclude
+	excludesfile = /Users/neil/.gitignore
 [credential]
 	helper = osxkeychain
 [github]

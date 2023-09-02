@@ -1,2 +1,5 @@
+# as well as ~/.gitignore and .gitignore, excludes can also be in .git/info/excludes (FFS)
 .DS_Store
 Session.vim
+.eslintrc.js
+eslintrc.json
