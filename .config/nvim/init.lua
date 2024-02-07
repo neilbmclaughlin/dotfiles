@@ -168,6 +168,7 @@ require('lazy').setup({
         theme = 'onedark',
         component_separators = '|',
         section_separators = '',
+        path = 1,
       },
     },
   },
@@ -235,6 +236,10 @@ require('lazy').setup({
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+vim.o.foldmethod = 'expr'
+vim.o.foldlevelstart = 99
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -274,6 +279,19 @@ vim.o.termguicolors = true
 
 vim.o.relativenumber = true
 
+vim.cmd([[
+  autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+]])
+
+vim.cmd([[
+  command! -nargs=1 -complete=buffer Sb belowright sbuffer <args>
+]])
+
+vim.cmd([[
+  command! -nargs=1 -complete=file Sp belowright split <args>
+]])
+
+
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
@@ -283,6 +301,17 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- Exit terminal mode with 'Ctrl + Space'
+vim.keymap.set('t', '<C-Space>', '<C-\\><C-n>', { noremap = true })
+
+-- disbale line numbering in the terminal window
+vim.cmd [[
+  augroup TerminalSettings
+    autocmd!
+    autocmd TermOpen * setlocal nonumber norelativenumber
+  augroup END
+]]
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -490,6 +519,9 @@ mason_lspconfig.setup {
 mason_lspconfig.setup_handlers {
   function(server_name)
     require('lspconfig')[server_name].setup {
+      -- added this line to prevent to suggestion to change to ECMAScript modules in js
+      -- in js the linter makes the suggestions so might want to make this more specific to tsserver
+      init_options = { preferences = { disableSuggestions = true } },
       capabilities = capabilities,
       on_attach = on_attach,
       settings = servers[server_name],
@@ -548,3 +580,4 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+--
