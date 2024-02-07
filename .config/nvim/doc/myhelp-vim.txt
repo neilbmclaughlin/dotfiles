@@ -1,0 +1,133 @@
+*myhelp-vim.txt*  For Vim version 7.4  Last change: 2014 April 18
+*myhelp-vim*
+
+Neil's cheat sheet of Vim stuff he always forgets.
+
+===============================================================================
+CONTENTS (CTRL-]: jump to subject, CTRL-O to jump back)
+
+Examples             |MyHelpVimExamples| 
+Movement             |MyHelpVimMovement|
+Notes                |MyHelpVimNotes|
+Rebuilding this file |MyHelpVimRebuildingThisFile|
+Further Reading      |MyHelpVimFurtherReading|
+
+===============================================================================
+Examples                                               *MyHelpVimExamples*
+
+:pc preview/scratch close
+:find *app - fuzzy find
+:vsp <filename> (:h split)
+* - find word under cursor
+verb(i|[0-9]*)noun
+
+Deletion/Replacement
+griw - replace inner word with contents of register
+d2w - delete 2 words
+ds' - delete surrounding quotes 'test'
+"_ddp - delete current line to null buffer and paste in register
+"+Y - yank current line to clipboard
+"+yi{ - yank contents between braces into clipboard
+
+viwp - replace the word with yanked text
+
+Surrounds
+cs'" - change ' for "  'test'
+ysiw" - surround with "  
+
+Comments
+gcl - comment line
+gcj5 - comment next 5 lines
+
+Formatting
+gqi1p/j - wrap 1 paragraph/line
+gqq - wrap current line
+gsip - sort paragraph 
+gcii - comment all lines in an indent
+g~iw - change case on inner word
+gg=G - format whole document
+=i{ formats the code block.
+=2i{ formats the current block and the block around it.
+gaip*| - format markdown table
+
+Folds
+zfi{ - fold lines between braces (zd to undo)
+zm(M) - more(all)
+zr(R) - reduce(all)
+zA - alternate for fold @ cursor
+
+Spelling
+:set spell spelllang=en_gb 
+:set nospell
+z= - see suggections
+zg - add speeling to dictionary
+]s, [s move through missspellings
+
+
+Misc
+$V%y - yank entire function 
+:bufdo e! - reload all buffers
+gf - open the file under the cursor
+:set paste/nopaste when cutting and pasting
+:SyntasticToggleMode to get rid of errors when editing nunjucks files (:help syntastic-commands)
+:%y+ - yank whole doc to clipboard
+% s/formatTime/_\0/g - replace formatTime with _formatTime
+%s/^\([ \t]*\)\([A-Za-z_].*\):/\1"\2":/ - quote unquoted keys in json file
+=j - nmap to format json file using jq
+:so ~/.vimrc - reload vimrc (useful to pick up changes when vim has been started with -S)
+:helpc - close help window without having to vavigate there
+
+Verbs c d > y v A i motion w (n)j 
+
+noun(text object) iw i' i" i] i) is ip it
+
+:reg : list registers (and show what’s in them)
+
+[f|t][char] find (include|exclude char)
+/ search
+. repeat
+
+Lexplore: https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.nqo6ojss3
+  d creates new directory
+  % creates/opens a new file
+  D deletes a directory/file
+  R renames a file
+  o opens the file in a horizontal split
+  v opens the file in a vertical split
+
+===============================================================================
+Movement                                                 *MyHelpVimMovement*
+
+   - gg : got to top
+   - ]] : next section
+   - ]m : next method
+   - [m : back to the start of the method
+   - ) : Next sentence
+   - CTRL-o : back to previous cursor position
+   - CTRL-D : Down half a page
+   - CTRL-U : Up half a page
+   - CTRL-]: jump to subject
+   - CTRL-T/O: jump back (f0rther)
+   - z commands:
+      - z<return> : Current line at the top
+      - z. : current line at the center
+      - z- : current line at the bottom
+
+===============================================================================
+Notes                                               *MyHelpVimNotes*
+
+===============================================================================
+Rebuilding this file.                               *MyHelpVimRebuildingThisFile*
+
+This file is loaded as a plugin. If you ever need to rebuild the tags file, run
+this command: >
+   :helpt /path/to/this/directory
+You may need to restart VIM to see the updated version.
+===============================================================================
+Further Reading.(gx to navigate to links)          *MyHelpVimFurtherReading*
+
+vim help http://vimdoc.sourceforge.net/htmldoc/help.html
+vim cheat sheet - http://vim.rtorr.com/
+how i did myhelp - http://technosophos.com/2014/10/09/create-built-in-vim-cheatsheet.html
+
+vim:tw=78:ts=8:noet:ft=help:norl modifiable 
