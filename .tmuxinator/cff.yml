@@ -49,46 +49,28 @@ startup_window: flood-app
 windows:
   - flood-app:
       root: ~/work/defra/cff/flood-app
-      layout: <%= @layout %>
       panes:
-        - vim -S
-        - 
-        - 
+        - vim
   - flood-service:
       root: ~/work/defra/cff/flood-service
-      layout: <%= @layout %>
       panes:
-        - vim -S
-        - 
-        - 
+        - vim
   - flood-db:
       root: ~/work/defra/cff/flood-db
-      layout: <%= @layout %>
       panes:
-        - vim -S
-        - 
-        - 
+        - vim
   - flood-data:
       root: ~/work/defra/cff/flood-data
-      layout: <%= @layout %>
       panes:
-        - vim -S
-        - 
-        - 
+        - vim
   - flood-pipelines:
       root: ~/work/defra/cff/flood-pipelines
-      layout: <%= @layout %>
       panes:
-        - vim -S
-        - 
-        - 
+        - vim
   - lfwconfig:
       root: ~/work/defra/cff/lfwconfig
-      layout: <%= @layout %>
       panes:
-        - vim -S
-        - 
-        - 
+        - vim
   - chatgpt:
       root: ~/work/defra/cff/lfwconfig
       layout: <%= @layout %>
