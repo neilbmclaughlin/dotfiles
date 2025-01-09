@@ -77,6 +77,14 @@ require('lazy').setup({
   -- misc plugins
   'tpope/vim-surround',
 
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+    -- use opts = {} for passing setup options
+    -- this is equalent to setup({}) function
+  },
+
   -- { dir = '~/work/neilbmclaughlin/nvim-lint' },
   -- to get this to work using standard had to:
   --   npm install --global eslint-config-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-n eslint
@@ -85,8 +93,6 @@ require('lazy').setup({
   --     # choose 'json' format
   --   git config --global core.excludesfile ~/.gitignore
   --   ensure created eslint file (eslintrc.json) is added to your local ~/.gitignore
-  --   note 1: these steps also allow lsp eslint to work
-  --   note 2: it's a bit hacky and would be better to have a standard specific plugin
   'mfussenegger/nvim-lint',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
@@ -178,10 +184,10 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
   },
 
   -- "gc" to comment visual regions/lines
@@ -215,6 +221,31 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     build = ':TSUpdate',
+  },
+
+  {
+    "zk-org/zk-nvim",
+    config = function()
+      require("zk").setup({
+        picker = "telescope",
+
+        lsp = {
+          -- `config` is passed to `vim.lsp.start_client(config)`
+          config = {
+            cmd = { "zk", "lsp" },
+            name = "zk",
+            -- on_attach = ...
+            -- etc, see `:h vim.lsp.start_client()`
+          },
+
+          -- automatically attach buffers in a zk notebook that match the given filetypes
+          auto_attach = {
+            enabled = true,
+            filetypes = { "markdown" },
+          },
+        },
+      })
+    end
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -292,6 +323,8 @@ vim.cmd([[
 ]])
 
 
+vim.cmd [[ autocmd FileType markdown set textwidth=80 ]]
+
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
@@ -358,6 +391,7 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
+vim.keymap.set('n', '<leader>sn', require("zk.commands").get("ZkNotes"), { desc = '[S]earch [N]otes' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -491,7 +525,7 @@ local servers = {
   -- rust_analyzer = {},
   -- eslint = { options = { overrideConfigFile = "./node_modules/standard/eslintrc.json" } },
   -- eslint = {},
-  tsserver = {},
+  ts_ls = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = {
@@ -518,6 +552,7 @@ mason_lspconfig.setup {
 
 mason_lspconfig.setup_handlers {
   function(server_name)
+    server_name = server_name == 'tsserver' and 'ts_ls' or server_name
     require('lspconfig')[server_name].setup {
       -- added this line to prevent to suggestion to change to ECMAScript modules in js
       -- in js the linter makes the suggestions so might want to make this more specific to tsserver
@@ -577,6 +612,13 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-- Zk keymaps
+-- Create a new note after asking for its title.
+vim.keymap.set("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { noremap=true, silent=false, desc="Create new zk note" })
+
+
+require("luasnip").config.setup({store_selection_keys="<Tab>"})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
