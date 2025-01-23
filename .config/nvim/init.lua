@@ -361,10 +361,21 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
+    layout_config = {
+      horizontal = {
+        preview_width = 0.6, -- Adjust preview width if necessary
+      },
+    },
     mappings = {
       i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = false,
+        ['<C-u>'] = require('telescope.actions').preview_scrolling_up,
+        ['<C-d>'] = require('telescope.actions').preview_scrolling_down,
+        ['<C-r>'] = require('telescope.actions').delete_buffer,
+      },
+      n = {
+        ['<C-u>'] = require('telescope.actions').preview_scrolling_up,
+        ['<C-d>'] = require('telescope.actions').preview_scrolling_down,
+        ['<C-r>'] = require('telescope.actions').delete_buffer,
       },
     },
   },
