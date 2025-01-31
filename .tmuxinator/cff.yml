@@ -50,29 +50,33 @@ windows:
   - flood-app:
       root: ~/work/defra/cff/flood-app
       panes:
-        - vim
+        - vim -S Session.vim
   - flood-service:
       root: ~/work/defra/cff/flood-service
       panes:
-        - vim
+        - vim -S Session.vim
   - flood-db:
       root: ~/work/defra/cff/flood-db
       panes:
-        - vim
+        - vim -S Session.vim
+  - geoserver:
+      root: ~/work/defra/cff/flood-gis
+      layout: <%= @layout %>
+      panes:
+        - vim -S Session.vim
   - flood-data:
       root: ~/work/defra/cff/flood-data
       panes:
-        - vim
+        - vim -S Session.vim
   - flood-pipelines:
       root: ~/work/defra/cff/flood-pipelines
       panes:
-        - vim
+        - vim -S Session.vim
   - lfwconfig:
       root: ~/work/defra/cff/lfwconfig
       panes:
-        - vim
-  - chatgpt:
-      root: ~/work/defra/cff/lfwconfig
-      layout: <%= @layout %>
+        - vim -S Session.vim
+  - cff-docker-stack:
+      root: ~/work/defra/cff/cff-docker-stack
       panes:
-        - chatgpt
+        - vim -S Session.vim
