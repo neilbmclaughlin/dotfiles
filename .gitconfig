@@ -1,38 +1,42 @@
 [alias]
-	st = status
+  st = status
   hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
   sw = switch
   swc = switch -c
-	swm = switch master
-	cm = commit -m
-	b = branch
-	aa = add -A
+  swm = switch master
+  cm = commit -m
+  b = branch
+  aa = add -A
   d = diff
   fpwl = push --force-with-lease
-	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+  alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 [user]
-	name = neil mclaughlin
-	email = neil.mclaughlin@defra.gov.uk
+  name = neil mclaughlin
+  email = neil.mclaughlin@defra.gov.uk
 [color]
-	ui = true
+  ui = true
 [push]
-	default = upstream
-	autoSetupRemote = true
+  default = upstream
+  autoSetupRemote = true
 [core]
-	editor = vim
-	excludesfile = /Users/neil/.gitignore
+  editor = vim
+  excludesfile = /Users/neil/.gitignore
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [github]
-	user = neilbmclaughlin
+  user = neilbmclaughlin
 [commit]
-	verbose = true
+  verbose = true
 [pull]
-	ff = only
+  ff = only
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[checkout]
+	defaultRemote = origin
+[pager]
+	log = bat --theme=Coldark-Dark --paging=always
