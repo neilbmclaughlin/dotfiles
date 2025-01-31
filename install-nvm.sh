@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 if [ -n "$NVM_DIR" ]
 then
   rm -rf "$NVM_DIR" ~/.npm
@@ -6,12 +8,12 @@ then
 fi
 
 echo "Installing NVM"
-curl -s -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.1/install.sh | zsh
+curl -s -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
 . ~/.zshrc
 
-nvm install 16
-nvm install 13
-nvm install 12
-nvm install 10
-nvm alias default 16
+nvm install 18
+nvm install 20
+nvm alias default 20
+
+nvm use
