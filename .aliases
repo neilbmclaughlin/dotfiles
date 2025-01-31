@@ -6,3 +6,4 @@ alias jql='jq -C '.' | less -R'
 alias node-grep='grep -R --exclude-dir={node_modules,.git,coverage} --include=\*.{js,json,nunjucks,njk,html}'
 alias mux=tmuxinator
 alias h-grep='history | grep'
+alias ghvll='gh run view --log-failed $(gh run list --status failure --limit 1 --json databaseId | jq -r ".[] | .databaseId") | cat'
