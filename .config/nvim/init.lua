@@ -118,6 +118,10 @@ require('lazy').setup({
     -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = {
+      -- adds words from buffer and dictionary
+       "hrsh7th/cmp-buffer",
+       "f3fora/cmp-spell",
+
       -- Snippet Engine & its associated nvim-cmp source
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
@@ -324,6 +328,12 @@ vim.cmd([[
 
 
 vim.cmd [[ autocmd FileType markdown set textwidth=80 ]]
+
+
+vim.opt.complete:append("kspell") -- Use spell suggestions
+vim.opt.complete:append("w") -- Search words in the current buffer
+vim.opt.spell = true -- Enable spell checking
+vim.opt.spelllang = "en"
 
 -- [[ Basic Keymaps ]]
 
@@ -582,6 +592,18 @@ local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
+
+cmp.setup.filetype({ "markdown", "text", "gitcommit" }, {
+  sources = {
+    -- Only use word completion
+    { name = "buffer" },
+    { name = "spell" },
+  },
+  mapping = cmp.mapping.preset.insert({
+    ["<C-n>"] = cmp.mapping.select_next_item(),
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
+  }),
+})
 
 cmp.setup {
   snippet = {
