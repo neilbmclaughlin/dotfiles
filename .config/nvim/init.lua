@@ -134,6 +134,9 @@ require('lazy').setup({
     },
   },
 
+  {
+    'mfussenegger/nvim-dap',
+  },
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
   {
@@ -652,6 +655,31 @@ vim.keymap.set("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') 
 
 
 require("luasnip").config.setup({store_selection_keys="<Tab>"})
+
+require("dap").adapters["pwa-node"] = {
+  type = "server",
+  host = "localhost",
+  port = "${port}",
+  executable = {
+    command = "js-debug-adapter",
+    -- args = {"~/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js", "${port}"},
+    args = {
+      "${port}"
+    },
+  }
+}
+
+require("dap").configurations.javascript = {
+  {
+    type = 'pwa-node',
+    request = 'attach',
+    name = 'Attach to Node app',
+    address = 'localhost',
+    port = 9229,
+    cwd = '${workspaceFolder}',
+    restart = true,
+  },
+}
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
