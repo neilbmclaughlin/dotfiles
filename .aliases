@@ -7,3 +7,6 @@ alias node-grep='grep -R --exclude-dir={node_modules,.git,coverage} --include=\*
 alias mux=tmuxinator
 alias h-grep='history | grep'
 alias ghvll='gh run view --log-failed $(gh run list --status failure --limit 1 --json databaseId | jq -r ".[] | .databaseId") | cat'
+alias dcu='docker compose up --remove-orphans --build'
+alias dcd='docker compose down'
+alias dcr='docker compose restart'
