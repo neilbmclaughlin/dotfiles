@@ -80,3 +80,7 @@ windows:
       root: ~/work/defra/cff/cff-docker-stack
       panes:
         - vim -S Session.vim
+  - flood-service-tests:
+      root: ~/work/defra/cff/flood-service-tests-v2
+      panes:
+        - vim -S Session.vim
