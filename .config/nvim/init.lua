@@ -669,17 +669,45 @@ require("dap").adapters["pwa-node"] = {
   }
 }
 
-require("dap").configurations.javascript = {
+require('dap').configurations.javascript = {
+  -- Local Debugging
   {
     type = 'pwa-node',
     request = 'attach',
-    name = 'Attach to Node app',
-    address = 'localhost',
-    port = 9229,
-    cwd = '${workspaceFolder}',
-    restart = true,
+    name = 'Attach to Node (Local)',
+    processId = require'dap.utils'.pick_process,
+    sourceMaps = true,
+    localRoot = vim.fn.getcwd(),  -- Local project directory
+    remoteRoot = nil, -- No remote path needed for local debugging
   },
+
+  -- Docker Debugging
+  {
+    type = 'pwa-node',
+    request = 'attach',
+    name = 'Attach to Node (Docker)',
+    address = "127.0.0.1",
+    port = 9229,
+    restart = true,
+    sourceMaps = true,
+    localRoot = vim.fn.getcwd(),  -- Path on host
+    remoteRoot = "/usr/src/app", -- Path inside the container
+  }
 }
+
+-- require("dap").configurations.javascript = {
+--   {
+--     type = 'pwa-node',
+--     request = 'attach',
+--     name = 'Attach to Node app',
+--     address = 'localhost',
+--     port = 9229,
+--     cwd = '${workspaceFolder}',
+--     restart = true,
+--     sourceMaps = true,
+--     localRoot = vim.fn.getcwd(),  -- Path on your local machine
+--     remoteRoot = "/usr/src/app", -- Path inside the container
+--   },
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
