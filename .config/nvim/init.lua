@@ -231,6 +231,11 @@ require('lazy').setup({
   },
 
   {
+    'voldikss/vim-floaterm',
+    lazy = false,
+  },
+
+  {
     "zk-org/zk-nvim",
     config = function()
       require("zk").setup({
@@ -649,10 +654,17 @@ cmp.setup {
   },
 }
 
--- Zk keymaps
--- Create a new note after asking for its title.
-vim.keymap.set("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { noremap=true, silent=false, desc="Create new zk note" })
+vim.api.nvim_create_user_command('GlowFloat', function()
+  local filetype = vim.bo.filetype
+  if filetype == "markdown" then
+    vim.cmd('FloatermNew --title=Glow\\ Preview glow -p %')
+  else
+    vim.notify("GlowFloat only works with Markdown files", vim.log.levels.WARN)
+  end
+end, { desc = 'Preview markdown with Glow in floating terminal' })
 
+vim.keymap.set("n", "<leader>gf", "<Cmd>GlowFloat<CR>",
+  { noremap=true, silent=true, desc="Preview markdown in floating terminal" })
 
 require("luasnip").config.setup({store_selection_keys="<Tab>"})
 
