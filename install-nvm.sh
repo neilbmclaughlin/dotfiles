@@ -8,7 +8,7 @@ then
 fi
 
 echo "Installing NVM"
-curl -s -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+curl -s -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
 
 . ~/.zshrc
 

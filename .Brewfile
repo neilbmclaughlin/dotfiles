@@ -2,10 +2,6 @@
 # Homebrew Taps (Repositories)
 # ──────────────────────────────────────────────────────
 tap "aws/tap"
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/services"
 tap "localstack/tap"
 tap "ngrok/ngrok"
 tap "romkatv/powerlevel10k"
