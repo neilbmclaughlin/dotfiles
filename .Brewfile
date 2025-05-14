@@ -80,6 +80,7 @@ brew "csvkit"          # CSV utilities
 cask "alacritty"                 # GPU-accelerated terminal
 cask "dbeaver-community"         # Database client
 cask "docker"                    # Container management
+cask "orbstack"                  # Alternative container management
 cask "font-ubuntu-mono-nerd-font" # Nerd font
 cask "iterm2"                    # Terminal emulator
 cask "ngrok"                     # Secure tunnels

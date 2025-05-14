@@ -42,3 +42,4 @@ Other stuff to do
 * Needed to move nvm install code in .zshrc to before the .nvmrc watcher functions 
 * Breaking neovim upgrades need resolving
 * LSP in neovim may not be working correctly
+* Don't seem to need openvpn any more
