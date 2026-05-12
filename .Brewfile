@@ -88,7 +88,7 @@ cask "rectangle"                 # Window management
 cask "slack"                     # Team communication
 cask "spotify"                   # Music streaming
 cask "visual-studio-code"        # Code editor
-
+brew "bleunlock"                 # Bluetooth screen unlock util
 # ──────────────────────────────────────────────────────
 # VS Code Extensions
 # ──────────────────────────────────────────────────────
